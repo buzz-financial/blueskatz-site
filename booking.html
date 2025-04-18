@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Band | Blues Katz Bar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+      <h1>
+        <!-- Logo is clickable and links to the home page -->
+        <a href="#" id="home-link">
+            <img src="blues.png" alt="Blues Katz Logo" style="height: 50px; vertical-align: middle;">
+        </a>
+      </h1>        
+      <nav>
+            <ul>
+                <li><a href="booking.html">Booking</a></li>
+                <li><a href="#calendar">Live Music</a></li>
+                <li><a href="menu.html" target="_blank">Menu</a></li>
+                <li><a href="#">Catering</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Booking Form Section -->
+    <main>
+        <section>
+            <h2>Book Your Band</h2>
+            <p>Please fill out the form below to book your band for an event at Blues Katz Bar:</p>
+            <form action="submit_form.php" method="POST" target="_blank">
+                <div>
+                    <label for="band-name">Band Name:</label>
+                    <input type="text" id="band-name" name="band-name" required>
+                </div>
+                <div>
+                    <label for="contact-name">Your Name:</label>
+                    <input type="text" id="contact-name" name="contact-name" required>
+                </div>
+                <div>
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer id="about">
+      <h3>About</h3>
+      <ul>
+        <li><a href="mailto:blueskatzgrill@gmail.com">Contact</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li><a href="https://www.facebook.com/blueskatzbar" target="_blank">Social Media</a></li>
+      </ul>
+      <p>&copy; 2025 Blues Katz Rock n Roll Grill. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

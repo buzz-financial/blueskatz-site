@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
 /* General Body Styling */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
@@ -37,15 +39,19 @@ header nav ul li {
     margin: 0 15px;
 }
 
+/* Nav Links */
 header nav ul li a {
-    color: #fff;
+    color: white;
     text-decoration: none;
-    font-size: 1rem;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
-
-header nav ul li a:hover {
-    text-decoration: underline;
+  
+  header nav ul li a:hover {
+    background-color: #555; /* Darker shade for hover */
 }
+  
 
 /* Main Content Section */
 main {
@@ -208,7 +214,7 @@ footer ul li a:hover {
 #calendar td.today {
   background-color: #cceeff;
   font-weight: bold;
-  border: 2px solid #3399ff;
+  border: 2px solid #757575;
 }
 
 .menu-list {
@@ -222,3 +228,67 @@ footer ul li a:hover {
     border-bottom: 1px solid #ddd;
     font-size: 1.1rem;
 }
+
+/* Add these new styles to your existing CSS */
+
+/* Style the days of the week row to make it distinct */
+#calendar-body th {
+    background-color: #f2f2f2; /* Light gray background for the top row */
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 0;
+    color: #333; /* Darker text for contrast */
+    border-bottom: 2px solid #ccc; /* Border to distinguish from other rows */
+  }
+  
+  /* Style for each calendar cell */
+  #calendar-body td {
+    position: relative;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ddd; /* Light border for each cell */
+    height: 100px; /* Set a height for cells */
+    font-size: 16px; /* Adjust font size for clarity */
+  }
+  
+  /* Remove the default text content from the cell and move it to the top-right corner */
+  #calendar-body td::before {
+    content: attr(data-date); /* Get the date number from the data attribute */
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Highlight the "today" date */
+  .today {
+    background-color: #757575; /* Bright yellow for today */
+    color: black;
+    border-radius: 8px; /* Rounded corners, not a circle */
+    font-weight: bold;
+    box-shadow: 0 0 0 2px #fff inset; /* optional: gives contrast inside */
+}
+
+  
+  .book-button {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    background-color: #757575;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    width: 200px;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* removes underline */
+  }
+  
+  .book-button:hover {
+    background-color: #0056b3;
+  }
+  
