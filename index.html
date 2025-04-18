@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Blues Katz Bar</title>
+
+    <!-- FullCalendar CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css" rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+      <h1>
+        <!-- Logo is clickable and links to the home page -->
+        <a href="#" id="home-link">
+            <img src="logo.png" alt="Blues Katz Logo" style="height: 50px; vertical-align: middle;">
+        </a>
+        BLUES KATZ BAR
+      </h1>        
+      <nav>
+            <ul>
+                <li><a href="#">Booking</a></li>
+                <li><a href="#calendar">Live Music</a></li>
+                <li><a href="menu.html" target="_blank">Menu</a></li>
+                <li><a href="#">Catering</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <section>
+        <h2>HOURS</h2>
+        <!-- Wrap food and bar in divs for styling -->
+        <div class="hours-container">
+            <div class="hours-column">
+                <h3>FOOD</h3>
+                <p>Monday-Thursday: 9 AM - 2 PM | 6 PM - 10 PM</p>
+                <p>Full Bar after 11:30 AM</p>
+            </div>
+            <div class="hours-column">
+                <h3>BAR</h3>
+                <p>Friday: 9 PM - 1 AM</p>
+                <p>Saturday: 8 PM - 12 AM</p>
+                <p>Closed Sundays</p>
+            </div>
+        </div>
+        <p>See Calendar for hour changes</p>
+    </section>
+
+    <section>
+      <h2>Live Music Calendar</h2>
+      <div id="calendar">
+        <h3 id="calendar-title"></h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Sun</th><th>Mon</th><th>Tue</th>
+              <th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
+            </tr>
+          </thead>
+          <tbody id="calendar-body"></tbody>
+        </table>
+      </div>
+
+      <!-- Weekly Strip -->
+      <!--<div id="weekly-strip">
+        <h4>This Week</h4>
+        <div class="week-grid" id="week-grid"></div>
+      </div>
+      Week Detail View -->
+      <div id="week-view" class="hidden">
+        <h4>Selected Week</h4>
+      <div class="week-detail-grid" id="week-detail-grid"></div>
+    </div>
+
+    </section>
+
+        <section>
+            <h2>Latest News</h2>
+            <p>New Menu!</p>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <!-- Footer Section -->
+  <footer id="about">
+    <h3>About</h3>
+      <ul>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li><a href="#">Social Media</a></li>
+      </ul>
+    <p>&copy; 2025 Blues Katz Rock n Roll Grill. All rights reserved.</p>
+  </footer>
+
+
+<script src="calendar.js"></script>
+</body>
+</html>
