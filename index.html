@@ -49,44 +49,57 @@
                 <h3>BAR</h3>
                 <p>Friday: 9 PM - 1 AM</p>
                 <p>Saturday: 8 PM - 12 AM</p>
-                <p>Closed Sundays</p>
             </div>
         </div>
+        <p>Closed Sundays</p>
         <p>See Calendar for hour changes</p>
     </section>
 
-    <section>
-      <a href="booking.html" class="book-button" target="_blank">BOOK YOUR BAND</a>
+    <section class="button-section">
+      <div class="button-column">
+        <a href="booking.html" class="book-button">BOOK YOUR BAND</a>
+      </div>
+      <div class="button-column">
+        <a href="mailto:blueskatzgrill@gmail.com?subject=Subscribe%20to%20Mailing%20List" class="mailing-button">JOIN MAILING LIST</a>
+      </div>
     </section>
+    
 
     <section>
       <h2>Live Music Calendar</h2>
-      <div id="calendar">
-        <h3 id="calendar-title"></h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Sun</th><th>Mon</th><th>Tue</th>
-              <th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
-            </tr>
-          </thead>
-          <tbody id="calendar-body"></tbody>
-        </table>
+    
+      <div class="calendar-wrapper">
+        
+        <!-- Calendar -->
+        <div id="calendar">
+          <div id="calendar-title-wrapper">
+            <h3 id="calendar-title"></h3>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Sun</th><th>Mon</th><th>Tue</th>
+                <th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
+              </tr>
+            </thead>
+            <tbody id="calendar-body"></tbody>
+          </table>
+        </div>
+    
+        <div id="event-detail" class="event-detail">
+          <!-- Will be populated by JS -->
+          <div id="event-info"></div>
+          <div id="event-actions" style="margin-top: 1rem;">
+            <a id="add-to-google-calendar" class="calendar-nav" target="_blank">Add to Google Calendar</a>
+            <button id="download-ics" class="calendar-nav" style="margin-left: 10px;">Download .ics</button>
+          </div>
+        </div>
+        
+        
       </div>
-
-      <!-- Weekly Strip -->
-      <!--<div id="weekly-strip">
-        <h4>This Week</h4>
-        <div class="week-grid" id="week-grid"></div>
-      </div>
-      Week Detail View -->
-      <div id="week-view" class="hidden">
-        <h4>Selected Week</h4>
-      <div class="week-detail-grid" id="week-detail-grid"></div>
-    </div>
-
     </section>
-
+    
+    
         <section>
             <h2>Latest News</h2>
             <p>New Menu!</p>
@@ -106,7 +119,7 @@
     <p>&copy; 2025 Blues Katz Rock n Roll Grill. All rights reserved.</p>
   </footer>
 
-
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.js"></script>
 <script src="calendar.js"></script>
 </body>
 </html>
