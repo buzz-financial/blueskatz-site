@@ -82,18 +82,30 @@ function getNextUpcomingEvent() {
 }
 
 function updateEventDetail(event) {
-  const container = document.getElementById('event-detail');
-  if (event) {
-    const label = formatEventLabel(event.date, event.time);
-    container.innerHTML = `
-      <h3>Event Details</h3>
-      <p><strong>${event.title}</strong></p>
-      <p>${label}</p>
-    `;
-  } else {
-    container.innerHTML = "<p>No upcoming events found.</p>";
-  }
+  const eventInfoBox = document.getElementById("event-info");
+
+  const [year, month, day] = event.date.split('-').map(Number);
+const eventDate = new Date(year, month - 1, day); // Local time, no timezone offset
+  const dateString = eventDate.toLocaleDateString('en-US', {
+    weekday: 'long',
+    month: 'long',
+    day: 'numeric'
+  });
+
+  const timeString = event.time;
+
+  eventInfoBox.innerHTML = `
+    <h3>${event.title}</h3>
+    <p><strong>${dateString} at ${timeString}</strong></p>
+    <p>${event.description || ''}</p>
+  `;
+
+  const addLink = document.getElementById("add-to-google-calendar");
+  addLink.href = formatGoogleCalendarUrl(event);
+  addLink.style.display = "inline-block";
 }
+
+
 
 function formatGoogleCalendarUrl(event) {
   const title = encodeURIComponent(event.title);
@@ -106,36 +118,6 @@ function formatGoogleCalendarUrl(event) {
   const endUTC = end.toISOString().replace(/-|:|\.\d\d\d/g,"");
 
   return `https://www.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${startUTC}/${endUTC}&details=${details}&location=${location}&sf=true&output=xml`;
-}
-
-function updateEventDetail(event) {
-  const eventBox = document.getElementById("event-detail");
-
-  const [year, month, day] = event.date.split('-').map(Number);
-  const eventDate = new Date(year, month - 1, day);
-
-  const dateString = eventDate.toLocaleDateString('en-US', {
-    weekday: 'long',
-    month: 'long',
-    day: 'numeric'
-  });
-
-  const timeString = eventDate.toLocaleTimeString('en-US', {
-    hour: 'numeric',
-    minute: '2-digit'
-  });
-
-  eventBox.innerHTML = `
-    <h3>${event.title}</h3>
-    <p><strong>${dateString} at ${timeString}</strong></p>
-    <p>${event.description || ''}</p>
-    <a id="add-to-google-calendar" class="calendar-nav" target="_blank">Add to Google Calendar</a>
-  `;
-
-  // Set the href for the calendar link
-  const addLink = document.getElementById("add-to-google-calendar");
-  addLink.href = formatGoogleCalendarUrl(event);
-  addLink.style.display = "inline-block"; // Make it visible if hidden
 }
 
 
@@ -199,8 +181,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (i === 0 && j < firstDay) {
           cell.textContent = "";
+          cell.classList.add("no-date");
         } else if (date > daysInMonth) {
           cell.textContent = "";
+          cell.classList.add("no-date");
         } else {
           rowHasDate = true;
           cell.setAttribute("data-date", date);
@@ -228,19 +212,23 @@ document.addEventListener('DOMContentLoaded', () => {
           cell.addEventListener("click", () => {
             const clickedDateStr = `${year}-${(month + 1).toString().padStart(2, '0')}-${cell.getAttribute("data-date").padStart(2, '0')}`;
             const matchedEvent = events.find(e => e.date === clickedDateStr);
+            const clickedDateObj = new Date(year, month, parseInt(cell.getAttribute("data-date")));
           
             if (matchedEvent) {
               updateEventDetail(matchedEvent);
-          
-              // Remove previous highlight
-              if (lastSelectedCell) {
-                lastSelectedCell.classList.remove("selected");
-              }
-              // Add highlight to clicked cell
+              if (lastSelectedCell) lastSelectedCell.classList.remove("selected");
               cell.classList.add("selected");
               lastSelectedCell = cell;
+            } else {
+              const today = new Date();
+              today.setHours(0, 0, 0, 0);
+          
+              if (clickedDateObj >= today) {
+                window.location.href = `/book?date=${clickedDateStr}`;
+              }
             }
           });
+          
           
 
           date++;

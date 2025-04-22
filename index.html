@@ -20,7 +20,7 @@
       <h1>
         <!-- Logo is clickable and links to the home page -->
         <a href="#" id="home-link">
-            <img src="blues.png" alt="Blues Katz Logo" style="height: 50px; vertical-align: middle;">
+            <img src="bluesupdated.png" alt="Blues Katz Logo" class="logo">
         </a>
       </h1>        
       <nav>
@@ -34,8 +34,14 @@
         </nav>
     </header>
 
+    <div class="age-banner">
+      21+ Only — Valid ID Required for Entry
+    </div>
+
     <!-- Main Content Section -->
     <main>
+
+    <section class="highlight-block">
         <section>
         <h2>Hours</h2>
         <!-- Wrap food and bar in divs for styling -->
@@ -59,45 +65,84 @@
       <div class="button-column">
         <a href="booking.html" class="book-button">BOOK YOUR BAND</a>
       </div>
-      <div class="button-column">
-        <a href="mailto:blueskatzgrill@gmail.com?subject=Subscribe%20to%20Mailing%20List" class="mailing-button">JOIN MAILING LIST</a>
+    
+      <div class="button-column" style="display: flex; flex-direction: column; align-items: center;">
+        <form onsubmit="submitEmail(event)" style="display: flex; flex-direction: column; align-items: center;">
+          <input
+            type="email"
+            id="emailInput"
+            placeholder="example@email.com"
+            required
+            style="padding: 0.5rem; font-size: 1rem; width: 220px; border: 1px solid #ccc; border-radius: 5px; margin-bottom: 0.5rem;"
+          />
+          <button
+            type="submit"
+            class="mailing-button"
+            style="padding: 0.5rem 1rem; font-size: 1rem; background-color: #333; color: white; border: none; border-radius: 5px; cursor: pointer;"
+          >
+            JOIN MAILING LIST
+          </button>
+        </form>
       </div>
     </section>
+    
+    <script>
+      function submitEmail(event) {
+        event.preventDefault(); // Prevents page reload
+    
+        const email = document.getElementById("emailInput").value;
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+        if (emailRegex.test(email)) {
+          alert(`Thanks for signing up, ${email}!`);
+          document.getElementById("emailInput").value = "";
+        } else {
+          alert("Please enter a valid email address.");
+        }
+      }
+    </script>
+    </section>
+    
     
 
-    <section>
+    <section class="calendar-block" id="calendar">
       <h2>Live Music Calendar</h2>
     
-      <div class="calendar-wrapper">
-        
-        <!-- Calendar -->
-        <div id="calendar">
-          <div id="calendar-title-wrapper">
-            <h3 id="calendar-title"></h3>
+      <div id="calendar-container">
+        <!-- 📅 Left Side: Calendar -->
+        <div id="calendar-wrapper">
+          <div id="calendar">
+            <div id="calendar-title-wrapper">
+              <h3 id="calendar-title"></h3>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Sun</th><th>Mon</th><th>Tue</th>
+                  <th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
+                </tr>
+              </thead>
+              <tbody id="calendar-body"></tbody>
+            </table>
           </div>
-          <table>
-            <thead>
-              <tr>
-                <th>Sun</th><th>Mon</th><th>Tue</th>
-                <th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
-              </tr>
-            </thead>
-            <tbody id="calendar-body"></tbody>
-          </table>
         </div>
     
-        <div id="event-detail" class="event-detail">
-          <!-- Will be populated by JS -->
-          <div id="event-info"></div>
-          <div id="event-actions" style="margin-top: 1rem;">
-            <a id="add-to-google-calendar" class="calendar-nav" target="_blank">Add to Google Calendar</a>
-            <button id="download-ics" class="calendar-nav" style="margin-left: 10px;">Download .ics</button>
+        <!-- 🎤 Right Side: Event Detail & Jam Night Promo -->
+        <div id="event-panel">
+          <div id="event-detail" class="event-detail">
+            <div id="event-info"></div>
+            <div id="event-actions" style="margin-top: 1rem;">
+              <a id="add-to-google-calendar" class="calendar-nav" target="_blank">Add to Google Calendar</a>
+            </div>
+          </div>
+          <div class="permanent-event-message">
+            <p>🎸 <strong>Open Jam Night</strong> every Thursday at 8pm.<br>
+            Backline gear and sound provided — just bring your instrument!</p>
           </div>
         </div>
-        
-        
       </div>
     </section>
+    
     
     
         <section>
