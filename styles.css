@@ -78,8 +78,8 @@ main h2 {
 
 .footer-columns {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-start;
   flex-wrap: wrap;
   gap: 2rem;
   padding: 2rem;
@@ -87,13 +87,24 @@ main h2 {
   color: #eee;
 }
 
+
 .footer-columns > div {
-  flex: 1;
+  flex: 0 0 30%;
   min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.footer-column h3 {
-  margin-bottom: 15px; /* Consistent spacing for all headings */
+.footer-columns > div:last-child {
+  flex: 0 0 40%; /* for Find Us (the right column) */
+}
+
+.footer-columns h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 .footer-about,
@@ -151,6 +162,8 @@ main h2 {
 .footer-about ul {
   list-style: none;
   padding: 0;
+  margin-bottom: 0.5rem;
+
 }
 
 .footer-about a {
@@ -159,7 +172,10 @@ main h2 {
 }
 
 .footer-about a:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  color: #cccccc91;
+
 }
 
 .footer-copy {
@@ -276,13 +292,6 @@ main h2 {
 
 /* === CALENDAR === */
 
-#calendar-container {
-  display: flex;
-  gap: 2rem;
-  align-items: flex-start;
-  padding: 0 1rem;
-}
-
 #calendar-wrapper {
   flex: 2;
   max-width: 100%;
@@ -297,13 +306,13 @@ main h2 {
 }
 .calendar-day {
   height: 130px;
-  width: 160px;
+  width: 130px;
   background-color: #1c1c1c;
   border: 1px solid #555;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   padding: 0.5rem;
   position: relative;
   box-sizing: border-box;
@@ -345,16 +354,6 @@ main h2 {
 }
 
 
-#calendar table {
-  width: 100%;
-  margin: 0 auto;
-  border-collapse: collapse;
-  font-size: 1.2rem;
-  table-layout: fixed;
-  background-color: #1c1c1c;
-  color: #e0e0e0;
-}
-
 #calendar th,
 #calendar-body th {
   width: 14.28%;
@@ -362,11 +361,6 @@ main h2 {
   background-color: #2a2a2a;
   border-bottom: 2px solid #444;
   font-weight: bold;
-}
-
-#calendar th {
-  text-align: center;
-  vertical-align: middle;
 }
 
 #calendar td,
@@ -470,12 +464,6 @@ td.no-date {
   color: #a0eaff;
 }
 
-/* Force the table to behave */
-#calendar table {
-  width: 100%;
-  table-layout: fixed; /* Important: equal column widths */
-  border-collapse: collapse;
-}
 
 /* Keep header nice */
 #calendar th {
@@ -485,18 +473,22 @@ td.no-date {
   color: #fff;
   font-weight: 600;
   border: 2px solid #222;
+  vertical-align: middle;
 }
 
 /* Style the date cells */
 #calendar td {
-  width: 14.2857%; /* 100% divided by 7 days */
-  height: 100px; /* <- you can adjust this number to get taller or shorter boxes */
-  vertical-align: top;
-  padding: 8px;
-  border: 2px solid #222; /* Thin borders between cells */
-  position: relative;
+  width: 200px;
+  height: 100px;
+  padding: 20px; /* Bigger clickable area */
+  font-size: 1.2rem; /* Bigger numbers */
   text-align: center;
+  border: 1px solid #444;
+  position: relative;
+  cursor: pointer;
+  box-sizing: border-box;
 }
+
 
 /* Make sure event titles inside cells don't overflow weirdly */
 #calendar td div {
@@ -512,8 +504,9 @@ td.no-date {
 }
 
 #calendar table {
-  width: 100%; /* ensures it stretches fully */
-  table-layout: fixed; /* enforces equal-sized cells */
+  width: 100%;
+  font-size: 1.1rem;
+  margin: 0 auto;
 }
 
 
@@ -843,11 +836,10 @@ h1, h2 {
 
 #calendar-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-start;
   gap: 2rem;
   margin-top: 1rem;
-  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   padding: 1rem;
@@ -855,7 +847,6 @@ h1, h2 {
 
 #calendar-wrapper {
   flex: 2;
-  max-width: 700px;
 }
 
 #event-panel {
@@ -866,7 +857,7 @@ h1, h2 {
 
 .calendar {
   display: grid;
-  grid-template-columns: repeat(7, 140px);
+  grid-template-columns: repeat(7, 1fr);
   gap: 4px;
   width: 100%;
   max-width: 1000px;
@@ -924,4 +915,5 @@ h1, h2 {
     font-size: 12px;
   }
 }
+
 
