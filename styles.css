@@ -730,26 +730,7 @@ h1, h2 {
   color: #fff;
 }
 
-.image-break {
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  width: 100vw;
-  background-image: url('trumpetguy.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 40vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  text-align: center;
-  padding: 0;
-  z-index: 0;
-}
+
 
 
 .image-break::before {
@@ -935,4 +916,49 @@ h1, h2 {
   }
 }
 
+.carousel-section {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+}
 
+.carousel {
+  position: relative;
+  height: 100%;
+}
+
+.carousel-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: 0;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 4rem;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
+  font-family: 'Playfair Display', serif;
+}
