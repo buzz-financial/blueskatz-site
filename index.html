@@ -63,9 +63,6 @@
         </a>
       
       </div>
-      
-      
-
  
 
     <div class="music-banner" onclick="scrollToCalendar()">
@@ -196,6 +193,17 @@
     once: true     // animate only once
   });
 </script>
+
+<div id="age-gate" class="age-gate-overlay">
+  <div class="age-gate-box">
+    <h2>Are you 21+?</h2>
+    <div class="age-gate-buttons">
+      <button onclick="confirmAge(true)">Yes</button>
+      <button onclick="confirmAge(false)">No</button>
+    </div>
+  </div>
+</div>
+
 
 </body>
 </html>

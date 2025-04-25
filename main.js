@@ -72,3 +72,20 @@ document.addEventListener("DOMContentLoaded", () => {
     
     setInterval(showNextSlide, 4000); // change slide every 4 seconds
     
+    function confirmAge(isOfAge) {
+      if (isOfAge) {
+        document.getElementById('age-gate').style.display = 'none';
+        localStorage.setItem('isOfAge', 'true'); // optional: remember user's answer
+      } else {
+        window.location.href = "https://www.responsibility.org/"; // or any site you want
+      }
+    }
+    
+    // Optional: check if already confirmed
+    window.addEventListener('DOMContentLoaded', () => {
+      const isOfAge = localStorage.getItem('isOfAge');
+      if (isOfAge === 'true') {
+        document.getElementById('age-gate').style.display = 'none';
+      }
+    });
+    
