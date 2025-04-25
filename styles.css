@@ -56,9 +56,8 @@ header nav ul li a:hover {
 /* === MAIN CONTENT === */
 
 main {
-  padding: 30px;
-  max-width: 1200px;
-  margin: 20px auto 0;
+  padding: 1rem;
+  margin: 0;
   background-color: #1e1e1e;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05);
@@ -67,39 +66,213 @@ main {
 main h2 {
   font-size: 1.5rem;
   color: #e0e0e0;
-}
-
-/* === FOOTER === */
-
-footer {
-  background-color: #1a1a1a;
-  color: #f0f0f0;
-  padding: 20px;
   text-align: center;
 }
 
-footer h3 {
-  font-size: 1.25rem;
+/* === FOOTER === */
+#about {
+  background-color: #111;
+  color: white;
+  padding: 2rem;
 }
 
-footer ul {
-  list-style-type: none;
+.footer-columns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #111;
+  color: #eee;
+}
+
+.footer-columns > div {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-column h3 {
+  margin-bottom: 15px; /* Consistent spacing for all headings */
+}
+
+.footer-about,
+.footer-mailing,
+.footer-map {
+  flex: 1;
+  min-width: 250px;
+}
+
+
+.footer-mailing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  max-width: 300px;
+  flex-grow: 0; /* Don’t grow beyond content */
+  flex-shrink: 0;
+  flex-basis: 300px;
+}
+
+.footer-about,
+.footer-mailing {
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center horizontally */
+  text-align: center;   /* center text */
+}
+
+.footer-mailing input[type="email"],
+.footer-mailing button {
+  width: 100%;
+  max-width: 200px; /* smaller width */
+  border-radius: 5px; /* Rounded corners */
+  height: 40px;
+  font-size: 0.95rem;
+  border: 1px solid #444;
+  font-family: inherit;
+}
+
+
+.footer-map {
+  flex: 2; /* make this one bigger */
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers content horizontally */
+  text-align: center; 
+}
+
+
+
+.footer-about ul {
+  list-style: none;
   padding: 0;
 }
 
-footer ul li {
-  display: inline;
-  margin: 0 15px;
-}
-
-footer ul li a {
-  color: #fff;
+.footer-about a {
+  color: #ccc;
   text-decoration: none;
 }
 
-footer ul li a:hover {
+.footer-about a:hover {
   text-decoration: underline;
 }
+
+.footer-copy {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.footer-mailing input[type="email"] {
+  padding: 0.4rem 0.6rem;
+  font-size: 0.9rem;
+  border: 1px solid #444;
+  border-radius: 5px;
+  width: 160px;
+  background-color: #1e1e1e;
+  color: #eee;
+  font-family: inherit;
+  margin-bottom: 0.5rem;
+}
+
+
+.footer-mailing button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background-color 0.3s ease;
+}
+
+.footer-mailing button:hover {
+  background-color: #555;
+}
+
+.footer-mailing form {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 300px;
+  margin-top: 0.5rem;
+}
+
+.footer-mailing input[type="email"],
+.footer-mailing button {
+  height: 40px; /* match height exactly */
+  font-size: 0.95rem;
+  border: 1px solid #444;
+  font-family: inherit;
+}
+
+.footer-mailing input[type="email"] {
+  background-color: #1e1e1e;
+  color: #eee;
+  flex: 1;
+}
+
+.footer-mailing button {
+  background-color: #333;
+  color: white;
+  border-left: none;
+  flex-shrink: 0;
+  padding: 0 1rem;
+}
+
+.footer-mailing button:hover {
+  background-color: #555;
+}
+
+.footer-signup {
+  flex: 2;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-signup form {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.footer-signup input[type="email"] {
+  padding: 0.5rem 1rem;
+  border-radius: 5px 0 0 5px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background-color: #222;
+  color: white;
+}
+
+.footer-signup button {
+  padding: 0.5rem 1rem;
+  border-radius: 0 5px 5px 0;
+  border: none;
+  background-color: #444;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.footer-signup button:hover {
+  background-color: #666;
+}
+
 
 /* === CALENDAR === */
 
@@ -107,19 +280,62 @@ footer ul li a:hover {
   display: flex;
   gap: 2rem;
   align-items: flex-start;
+  padding: 0 1rem;
 }
 
 #calendar-wrapper {
   flex: 2;
 }
 
-#calendar {
-  background-color: #1c1c1c;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  color: #e0e0e0;
+/* Make the calendar a bit wider */
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
 }
+
+.calendar-day {
+  aspect-ratio: 1 / 1; /* 🔥 makes them square */
+  min-height: 100px;   /* optional floor if aspect-ratio doesn't fully kick in */
+  border: 1px solid #333;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+
+/* Prevent event text from stretching the box */
+.calendar-day .event {
+  font-size: 0.8rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Add scroll or wrap if multiple events (optional) */
+.calendar-day .event-multi {
+  overflow-y: auto;
+  max-height: 60px;
+}
+
+/* Highlighted dot for selected day */
+.calendar-day.selected::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: #38bdf8;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+
 
 #calendar table {
   width: 100%;
@@ -222,6 +438,52 @@ td.no-date {
   color: #a0eaff;
 }
 
+/* Force the table to behave */
+#calendar table {
+  width: 100%;
+  table-layout: fixed; /* Important: equal column widths */
+  border-collapse: collapse;
+}
+
+/* Keep header nice */
+#calendar th {
+  padding: 10px;
+  text-align: center;
+  background-color: #333; /* or whatever your header color is */
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Style the date cells */
+#calendar td {
+  width: 14.2857%; /* 100% divided by 7 days */
+  height: 100px; /* <- you can adjust this number to get taller or shorter boxes */
+  vertical-align: top;
+  padding: 8px;
+  border: 1px solid #222; /* Thin borders between cells */
+  position: relative;
+  text-align: center;
+}
+
+/* Make sure event titles inside cells don't overflow weirdly */
+#calendar td div {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  margin-top: 20%;
+
+}
+
+#calendar-wrapper {
+  max-width: 1000px; /* increase from earlier ~700px */
+  margin: 0 auto;
+}
+
+#calendar table {
+  width: 100%; /* ensures it stretches fully */
+  table-layout: fixed; /* enforces equal-sized cells */
+}
+
+
 /* === EVENT PANEL === */
 
 #event-panel {
@@ -234,9 +496,7 @@ td.no-date {
 
 .event-detail, .permanent-event-message {
   background: #1e1e1e;
-  border: 1px solid #444;
   padding: 1rem;
-  border-radius: 8px;
   color: #ffffff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
@@ -248,10 +508,6 @@ td.no-date {
 
 .event-detail p {
   margin: 0.3rem 0;
-}
-
-.permanent-event-message {
-  border-left: 5px solid #ffcc00;
 }
 
 /* === HOURS SECTION === */
@@ -350,9 +606,8 @@ td.no-date {
 }
 
 .calendar-block {
-  background: #1e1e1e;
+  background: #0A1A2F;
   padding: 3rem 1rem;
-  border-top: 2px solid #444;
 }
 
 .hidden {
@@ -372,3 +627,206 @@ td.no-date {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   margin: 0;
 }
+
+/* === FONT STYLING === */
+
+/* Base body font */
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Header and title font */
+h1, h2, h3, h4, header h1, footer h3,
+.event-detail h3,
+.hours-column h3,
+#calendar-title-wrapper,
+header nav ul li a {
+  font-family: 'Playfair Display', serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+h1, h2 {
+  font-weight: 700;
+  font-size: 2.25rem;
+  line-height: 1.2;
+}
+
+.jam-night-message,
+.band-booking-message {
+  background: #1e1e1e;
+  padding: 1rem;
+  margin-top: -10px;
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.band-booking-message h3 {
+  margin-top: 0;
+  color: #a0eaff;
+}
+
+.book-band-button {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 0.7rem;
+  padding: 4px 6px;
+  background-color: #1e1e1e;
+  color: #00bfff;
+  border: 1px solid #00bfff;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.book-band-button:hover {
+  background-color: #003366;
+  color: #fff;
+}
+
+.image-break {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  background-image: url('trumpetguy.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 0;
+  z-index: 0;
+}
+
+
+.image-break::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.4)); /* or just rgba black */
+  z-index: 1;
+}
+
+.image-break h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  z-index: 2;
+  position: relative;
+  font-family: 'Playfair Display', serif;
+}
+
+.image-break h2 {
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  transform: translateY(10px);
+  opacity: 0;
+}
+
+.image-break.in-view h2 {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.mailing-list-section {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.mailing-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.mailing-form input[type="email"] {
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 220px;
+  font-family: inherit;
+}
+
+.mailing-button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background-color 0.3s ease;
+}
+
+.mailing-button:hover {
+  background-color: #222;
+}
+
+#emailFeedback {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  color: #f0e8d9;
+  width: 100%;
+  text-align: center;
+}
+
+.music-banner {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  
+  background-color: #1e3a5f; /* deep blue */
+  color: #f9f9f9;
+  font-weight: 600;
+  font-size: 1.2rem;
+  padding: 1rem;
+  text-align: center;
+  border-top: 2px solid #facc15;
+  border-bottom: 2px solid #facc15;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 1;
+}
+
+
+.music-banner:hover {
+  background-color: #2a4e7c;
+}
+
+
+#calendar-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-top: 1rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+}
+
+#calendar-wrapper {
+  flex: 2;
+  max-width: 700px;
+}
+
+#event-panel {
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+}
+

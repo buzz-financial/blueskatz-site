@@ -38,7 +38,25 @@ const events = [
   { title: "TBA", date: "2025-05-31", time: "8pm" }
 ];
 
+const today = new Date();
+
+function isSaturday(date) {
+  return date.getDay() === 6;
+}
+
+function isFuture(date) {
+  const now = new Date();
+  now.setHours(0, 0, 0, 0);
+  return date >= now;
+}
+
+function isSaturdayTBA(dateStr) {
+  return events.some(event => event.date === dateStr && event.title === "TBA");
+}
+
+
 let lastSelectedCell = null;
+let currentDate = new Date();
 
 
 function formatEventLabel(dateStr, time) {
@@ -78,7 +96,11 @@ function getNextUpcomingEvent() {
   };
 
   const sortedEvents = [...events].sort((a, b) => parseEventDateTime(a) - parseEventDateTime(b));
-  return sortedEvents.find(event => parseEventDateTime(event) >= now);
+  return sortedEvents.find(event => {
+    const eventTime = parseEventDateTime(event);
+    return eventTime >= now;
+  });
+  
 }
 
 function updateEventDetail(event) {
@@ -105,6 +127,24 @@ const eventDate = new Date(year, month - 1, day); // Local time, no timezone off
   addLink.style.display = "inline-block";
 }
 
+function updateMusicBanner(event) {
+  const banner = document.getElementById("music-banner");
+  const [year, month, day] = event.date.split('-').map(Number);
+  const eventDate = new Date(year, month - 1, day);
+  const now = new Date();
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+  const isToday =
+    eventDate.getFullYear() === today.getFullYear() &&
+    eventDate.getMonth() === today.getMonth() &&
+    eventDate.getDate() === today.getDate();
+
+  const label = isToday
+    ? `Tonight at ${event.time}: ${event.title}`
+    : `Next Up – ${formatEventLabel(event.date, event.time)}: ${event.title}`;
+
+  banner.textContent = label;
+}
 
 
 function formatGoogleCalendarUrl(event) {
@@ -123,9 +163,11 @@ function formatGoogleCalendarUrl(event) {
 
 function showNextUpcomingEvent() {
   const event = getNextUpcomingEvent();
-  updateEventDetail(event);
 
   if (!event) return;
+
+  updateEventDetail(event);
+  updateMusicBanner(event);
 
   const [year, month, day] = event.date.split('-').map(Number);
   const cells = document.querySelectorAll(`[data-date='${day}']`);
@@ -160,7 +202,6 @@ document.addEventListener('DOMContentLoaded', () => {
     "July", "August", "September", "October", "November", "December"
   ];
 
-  let currentDate = new Date();
 
   function renderCalendar(dateObj) {
     const month = dateObj.getMonth();
@@ -200,6 +241,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
           const dateStr = `${year}-${(month + 1).toString().padStart(2, '0')}-${date.toString().padStart(2, '0')}`;
           const dayEvents = events.filter(e => e.date === dateStr);
+          
+          const clickedDateObj = new Date(year, month, date);
+
+          if (isSaturday(clickedDateObj) && isFuture(clickedDateObj) && isSaturdayTBA(dateStr)) {
+            const bookBtn = document.createElement("a");
+            bookBtn.href = `/book?date=${dateStr}`;
+            bookBtn.textContent = "Book this night";
+            bookBtn.className = "book-band-button";
+            cell.appendChild(bookBtn);
+          }
+
+          
           if (dayEvents.length > 0) {
             dayEvents.forEach(event => {
               const eventDiv = document.createElement("div");
@@ -210,24 +263,36 @@ document.addEventListener('DOMContentLoaded', () => {
           }
 
           cell.addEventListener("click", () => {
-            const clickedDateStr = `${year}-${(month + 1).toString().padStart(2, '0')}-${cell.getAttribute("data-date").padStart(2, '0')}`;
+            const clickedDay = cell.getAttribute("data-date").padStart(2, '0');
+            const clickedDateStr = `${year}-${(month + 1).toString().padStart(2, '0')}-${clickedDay}`;
             const matchedEvent = events.find(e => e.date === clickedDateStr);
-            const clickedDateObj = new Date(year, month, parseInt(cell.getAttribute("data-date")));
+            const clickedDateObj = new Date(year, month, parseInt(clickedDay));
+            const eventInfoBox = document.getElementById("event-info");
+            const addLink = document.getElementById("add-to-google-calendar");
+          
+            if (lastSelectedCell) lastSelectedCell.classList.remove("selected");
+            cell.classList.add("selected");
+            lastSelectedCell = cell;
+          
+            const formattedDate = clickedDateObj.toLocaleDateString('en-US', {
+              weekday: 'long',
+              month: 'long',
+              day: 'numeric'
+            });
           
             if (matchedEvent) {
               updateEventDetail(matchedEvent);
-              if (lastSelectedCell) lastSelectedCell.classList.remove("selected");
-              cell.classList.add("selected");
-              lastSelectedCell = cell;
             } else {
-              const today = new Date();
-              today.setHours(0, 0, 0, 0);
-          
-              if (clickedDateObj >= today) {
-                window.location.href = `/book?date=${clickedDateStr}`;
-              }
+              // Show "No event scheduled"
+              eventInfoBox.innerHTML = `
+                <h3>No event scheduled</h3>
+                <p><strong>${formattedDate}</strong></p>
+                <p></p>
+              `;
+              addLink.style.display = "none";
             }
           });
+          
           
           
 
@@ -267,3 +332,18 @@ document.addEventListener('DOMContentLoaded', () => {
   renderCalendar(currentDate);
   showNextUpcomingEvent();
 });
+
+const imageSection = document.querySelector('.image-break');
+
+const observer = new IntersectionObserver(
+  ([entry]) => {
+    if (entry.isIntersecting) {
+      imageSection.classList.add('in-view');
+    }
+  },
+  { threshold: 0.1 }
+);
+
+observer.observe(imageSection);
+
+
