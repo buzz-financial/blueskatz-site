@@ -281,14 +281,19 @@ document.addEventListener('DOMContentLoaded', () => {
             if (matchedEvent) {
               updateEventDetail(matchedEvent);
             } else {
-              // Show "No event scheduled"
+              const [year, month, day] = dateStr.split('-').map(Number);
+              const clickedDateObj = new Date(year, month - 1, day);
+              const isSunday = clickedDateObj.getDay() === 0;
+            
               eventInfoBox.innerHTML = `
-                <h3>No event scheduled</h3>
+                <h3>${isSunday ? 'Closed' : 'No event scheduled'}</h3>
                 <p><strong>${formattedDate}</strong></p>
                 <p></p>
               `;
               addLink.style.display = "none";
             }
+            
+            
           });
           
           

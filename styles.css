@@ -539,15 +539,34 @@ td.no-date {
 
 /* === HOURS SECTION === */
 
+
+.hours-box-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  justify-content: center;
+}
+
 .hours-container {
   display: flex;
-  justify-content: space-between;
-  gap: 30px;
-  margin-bottom: 30px;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 4rem;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 0 auto 40px auto;
 }
 
 .hours-column {
-  flex: 1;
+  width: 300px;
+  flex: 0 0 250px;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.hours-column:hover {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
 }
 
 .hours-column h3 {
