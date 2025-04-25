@@ -15,7 +15,6 @@ const events = [
   { title: "Talent Show Tuesdays with Kira", date: "2025-04-22", time: "8pm" },
   { title: "Open Jam Night", date: "2025-04-24", time: "8pm" },
   { title: "Latin Dance with DJ Tony", date: "2025-04-25", time: "9pm" },
-  { title: "TBA", date: "2025-04-26", time: "8pm" },
   { title: "Talent Show Tuesdays with Kira", date: "2025-04-29", time: "8pm" },
   { title: "Open Jam Night", date: "2025-05-01", time: "8pm" },
   { title: "Latin Dance with DJ Tony", date: "2025-05-02", time: "9pm" },
@@ -23,19 +22,15 @@ const events = [
   { title: "Talent Show Tuesdays with Kira", date: "2025-05-06", time: "8pm" },
   { title: "Open Jam Night", date: "2025-05-08", time: "8pm" },
   { title: "Latin Dance with DJ Tony", date: "2025-05-09", time: "9pm" },
-  { title: "TBA", date: "2025-05-10", time: "8pm" },
   { title: "Talent Show Tuesdays with Kira", date: "2025-05-13", time: "8pm" },
   { title: "Open Jam Night", date: "2025-05-15", time: "8pm" },
   { title: "Latin Dance with DJ Tony", date: "2025-05-16", time: "9pm" },
-  { title: "TBA", date: "2025-05-17", time: "8pm" },
   { title: "Talent Show Tuesdays with Kira", date: "2025-05-20", time: "8pm" },
   { title: "Open Jam Night", date: "2025-05-22", time: "8pm" },
   { title: "Latin Dance with DJ Tony", date: "2025-05-23", time: "9pm" },
-  { title: "TBA", date: "2025-05-24", time: "8pm" },
   { title: "Talent Show Tuesdays with Kira", date: "2025-05-27", time: "8pm" },
   { title: "Open Jam Night", date: "2025-05-29", time: "8pm" },
   { title: "Latin Dance with DJ Tony", date: "2025-05-30", time: "9pm" },
-  { title: "TBA", date: "2025-05-31", time: "8pm" }
 ];
 
 const today = new Date();
@@ -244,12 +239,15 @@ document.addEventListener('DOMContentLoaded', () => {
           
           const clickedDateObj = new Date(year, month, date);
 
-          if (isSaturday(clickedDateObj) && isFuture(clickedDateObj) && isSaturdayTBA(dateStr)) {
-            const bookBtn = document.createElement("a");
-            bookBtn.href = `/book?date=${dateStr}`;
-            bookBtn.textContent = "Book this night";
-            bookBtn.className = "book-band-button";
-            cell.appendChild(bookBtn);
+          if (
+            isSaturday(clickedDateObj) &&
+            isFuture(clickedDateObj) &&
+            !events.some(event => event.date === dateStr)) {
+              const bookBtn = document.createElement("a");
+              bookBtn.href = `/book?date=${dateStr}`;
+              bookBtn.textContent = "Book this night";
+              bookBtn.className = "book-band-button";
+              cell.appendChild(bookBtn);
           }
 
           
