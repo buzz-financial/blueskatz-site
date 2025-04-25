@@ -75,17 +75,26 @@ document.addEventListener("DOMContentLoaded", () => {
     function confirmAge(isOfAge) {
       if (isOfAge) {
         document.getElementById('age-gate').style.display = 'none';
-        localStorage.setItem('isOfAge', 'true'); // optional: remember user's answer
+        sessionStorage.setItem('isOfAge', 'true'); // Only for this browser session
       } else {
-        window.location.href = "https://www.responsibility.org/"; // or any site you want
+        window.location.href = "https://www.responsibility.org/";
       }
     }
     
-    // Optional: check if already confirmed
     window.addEventListener('DOMContentLoaded', () => {
-      const isOfAge = localStorage.getItem('isOfAge');
-      if (isOfAge === 'true') {
+      if (sessionStorage.getItem('isOfAge') === 'true') {
         document.getElementById('age-gate').style.display = 'none';
+      } else {
+        document.getElementById('age-gate').style.display = 'flex';
+      }
+    });
+    
+    window.addEventListener("load", () => {
+      const loader = document.getElementById("vinyl-loader");
+      if (loader) {
+        loader.style.opacity = "0";
+        loader.style.transition = "opacity 0.5s ease-out";
+        setTimeout(() => loader.remove(), 500);
       }
     });
     
