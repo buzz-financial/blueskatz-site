@@ -56,7 +56,7 @@ header nav ul li a:hover {
 /* === MAIN CONTENT === */
 
 main {
-  padding: 1rem;
+  padding: 0;
   margin: 0;
   background-color: #1e1e1e;
   border-radius: 10px;
@@ -195,6 +195,9 @@ main h2 {
   color: #eee;
   font-family: inherit;
   margin-bottom: 0.5rem;
+  flex: 1;
+  outline: none;
+
 }
 
 
@@ -223,19 +226,6 @@ main h2 {
   margin-top: 0.5rem;
 }
 
-.footer-mailing input[type="email"],
-.footer-mailing button {
-  height: 40px; /* match height exactly */
-  font-size: 0.95rem;
-  border: 1px solid #444;
-  font-family: inherit;
-}
-
-.footer-mailing input[type="email"] {
-  background-color: #1e1e1e;
-  color: #eee;
-  flex: 1;
-}
 
 .footer-mailing button {
   background-color: #333;
@@ -264,15 +254,6 @@ main h2 {
   margin-top: 0.5rem;
 }
 
-.footer-signup input[type="email"] {
-  padding: 0.5rem 1rem;
-  border-radius: 5px 0 0 5px;
-  border: none;
-  outline: none;
-  font-size: 1rem;
-  background-color: #222;
-  color: white;
-}
 
 .footer-signup button {
   padding: 0.5rem 1rem;
@@ -916,6 +897,7 @@ h1, h2 {
   }
 }
 
+/*
 .carousel-section {
   width: 100%;
   height: 400px;
@@ -962,6 +944,7 @@ h1, h2 {
   text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
   font-family: 'Playfair Display', serif;
 }
+  */
 
 .age-gate-overlay {
   position: fixed;
@@ -1027,3 +1010,92 @@ h1, h2 {
   to   { transform: rotate(360deg); }
 }
 
+.footer-mailing form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+#emailInput {
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  width: 250px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.mailing-button {
+  padding: 10px 16px;
+  font-size: 1rem;
+  background-color: #1f8eed;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.mailing-button:hover {
+  background-color: #156bc2;
+}
+
+.more-events-section {
+  background-color: #111;
+  color: #fff;
+  padding: 2rem;
+  margin-top: 2rem;
+  border-top: 2px solid #444;
+  text-align: center;
+}
+
+.more-events-section a {
+  color: #4da6ff;
+  text-decoration: none;
+}
+
+.more-events-section a:hover{
+  color: #3874b1;
+  text-decoration: none;
+}
+
+
+.feature-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  margin: 0;
+}
+
+.feature-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.feature-row img {
+  width: 25vw;            /* smaller image width */
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+
+.feature-text {
+  flex: 1;
+  padding: 2rem 3rem;
+  background-color: #111;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* left align by default */
+  justify-content: center;
+  text-align: left;
+}
+
+.feature-row.reverse .feature-text {
+  text-align: right;
+  align-items: flex-end; /* optional: aligns text content like h3/p to the right edge */
+}
