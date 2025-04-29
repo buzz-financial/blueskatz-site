@@ -1075,4 +1075,179 @@ h1, h2 {
   align-items: flex-end;
 }
 
+/* Mobile Styles */
+@media (max-width: 768px) {
+  /* Header */
+  header h1 {
+    font-size: 1.5rem; /* Adjust header font size for mobile */
+  }
 
+  /* Main content */
+  main h2 {
+    font-size: 1.2rem; /* Adjust subheading font size */
+  }
+
+  /* Footer */
+  .footer-columns {
+    flex-direction: column; /* Stack footer columns */
+    align-items: flex-start;
+  }
+
+  .footer-columns > div {
+    flex: 1 1 100%; /* Allow footer sections to stack */
+    margin-bottom: 1rem;
+  }
+
+  /* Calendar */
+  .calendar {
+    font-size: 1rem; /* Adjust font size */
+    padding: 0.5rem;
+  }
+
+  .calendar-day {
+    width: 90px; /* Reduce calendar day width */
+    height: 90px; /* Reduce calendar day height */
+  }
+
+  .calendar-grid {
+    grid-template-columns: repeat(7, 1fr); /* Make calendar grid fully responsive */
+  }
+
+  /* Event Panel */
+  #event-panel {
+    width: 100%; /* Ensure event panel is full-width on mobile */
+  }
+
+  .event-detail, .permanent-event-message {
+    padding: 0.8rem; /* Adjust padding */
+  }
+
+  /* Menu & Buttons */
+  .button-section {
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 15px;
+  }
+
+  .book-button, .mailing-button {
+    width: 100%; /* Make buttons full-width */
+  }
+
+  /* Footer */
+  .footer-columns > div {
+    margin: 0;
+    flex: 1;
+  }
+
+  /* Hours Container */
+  .hours-container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 1rem;
+  }
+
+  /* Logo */
+  .logo {
+    height: 80px; /* Adjust logo size */
+    width: auto;
+  }
+
+  /* Calendar Navigation */
+  .calendar-nav {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+}
+
+/* Tablet Styles (between 768px and 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  .footer-columns {
+    gap: 1.5rem;
+  }
+
+  .calendar-day {
+    width: 100px;
+    height: 100px;
+  }
+
+  .calendar-nav {
+    font-size: 16px;
+  }
+
+  .button-section {
+    gap: 25px;
+  }
+
+  .logo {
+    height: 90px;
+  }
+}
+
+/* Default styling for desktop (calendar visible) */
+#calendar {
+  display: block;  /* Calendar is shown by default */
+}
+
+.upcoming-events-container {
+  display: none;  /* Hide this by default (desktop view) */
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.arrow {
+  display: none;  /* Hide the arrows by default */
+  background: transparent;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.event-info-box {
+  width: 100%;
+  padding: 20px;
+  background-color: #1e1e1e;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile styling: Hide calendar and show upcoming events with arrows */
+@media (max-width: 768px) {
+  #calendar {
+    display: none;  /* Hide calendar on mobile */
+  }
+
+  .upcoming-events-container {
+    display: flex;  /* Show upcoming events section */
+    width: 90%;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .arrow {
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+  }
+
+  .arrow.left-arrow {
+    margin-right: 10px;
+  }
+
+  .arrow.right-arrow {
+    margin-left: 10px;
+  }
+
+  .event-info-box {
+    flex-grow: 1;
+  }
+}

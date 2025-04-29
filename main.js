@@ -97,4 +97,35 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => loader.remove(), 500);
       }
     });
-    
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+  const leftArrow = document.querySelector('.left-arrow');
+  const rightArrow = document.querySelector('.right-arrow');
+  const eventInfoBox = document.querySelector('.event-info-box');
+  
+  let currentEventIndex = 0;
+  const events = [/* Array of events data */]; // Your events data
+
+  function updateEventInfo() {
+    const event = events[currentEventIndex];
+    eventInfoBox.innerHTML = `
+      <h2>${event.title}</h2>
+      <p>${event.date} at ${event.time}</p>
+      <p>${event.description}</p>
+    `;
+  }
+
+  leftArrow.addEventListener('click', function () {
+    currentEventIndex = (currentEventIndex - 1 + events.length) % events.length;
+    updateEventInfo();
+  });
+
+  rightArrow.addEventListener('click', function () {
+    currentEventIndex = (currentEventIndex + 1) % events.length;
+    updateEventInfo();
+  });
+
+  // Initialize the event info on page load
+  updateEventInfo();
+});
