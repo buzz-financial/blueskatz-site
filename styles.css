@@ -4,8 +4,8 @@ body {
   font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #121212;
-  color: #f0f0f0;
+  background-color: #2b1b12;
+  color: #3b2b20;
 }
 
 html {
@@ -17,10 +17,13 @@ html {
 header {
   background:
     linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url('vinyl.jpg') center/cover no-repeat;
-  color: white;
+    url('vinyl.jpg') center/cover no-repeat; 
+  /*
+  background: url('wood.jpg') center/cover no-repeat; */
+  color: #593c28;
   padding: 1rem 2rem;
   text-align: center;
+  font-style: bold;
 }
 
 header h1 {
@@ -42,7 +45,7 @@ header nav ul li {
 }
 
 header nav ul li a {
-  color: white;
+  color: #d2b48c;
   text-decoration: none;
   padding: 8px 16px;
   border-radius: 4px;
@@ -50,7 +53,7 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-  background-color: #333;
+  background-color: #e0ac6d;
 }
 
 /* === MAIN CONTENT === */
@@ -58,7 +61,7 @@ header nav ul li a:hover {
 main {
   padding: 0;
   margin: 0;
-  background-color: #1e1e1e;
+  background-color: #3b2b20;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05);
 }
@@ -84,7 +87,7 @@ main h2 {
   gap: 2rem;
   padding: 2rem;
   background-color: #111;
-  color: #eee;
+  color: #fdf6e3;
 }
 
 
@@ -143,7 +146,7 @@ main h2 {
   border-radius: 5px; /* Rounded corners */
   height: 40px;
   font-size: 0.95rem;
-  border: 1px solid #444;
+  border: 1px solid #704d33;
   font-family: inherit;
 }
 
@@ -174,7 +177,7 @@ main h2 {
 .footer-about a:hover {
   text-decoration: none;
   transition: color 0.3s ease;
-  color: #cccccc91;
+  color: #e0ac6d;
 
 }
 
@@ -182,17 +185,17 @@ main h2 {
   margin-top: 2rem;
   text-align: center;
   font-size: 0.9rem;
-  color: #888;
+  color: #fdf6e3;
 }
 
 .footer-mailing input[type="email"] {
   padding: 0.4rem 0.6rem;
   font-size: 0.9rem;
-  border: 1px solid #444;
+  border: 1px solid #704d33;
   border-radius: 5px;
   width: 160px;
-  background-color: #1e1e1e;
-  color: #eee;
+  background-color: #3b2b20;
+  color: #fdf6e3;
   font-family: inherit;
   margin-bottom: 0.5rem;
   flex: 1;
@@ -200,22 +203,6 @@ main h2 {
 
 }
 
-
-.footer-mailing button {
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  background-color: #333;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-family: inherit;
-  transition: background-color 0.3s ease;
-}
-
-.footer-mailing button:hover {
-  background-color: #555;
-}
 
 .footer-mailing form {
   display: flex;
@@ -228,7 +215,7 @@ main h2 {
 
 
 .footer-mailing button {
-  background-color: #333;
+  background-color: #593c28;
   color: white;
   border-left: none;
   flex-shrink: 0;
@@ -236,7 +223,7 @@ main h2 {
 }
 
 .footer-mailing button:hover {
-  background-color: #555;
+  background-color: #e0ac6d;
 }
 
 .footer-signup {
@@ -259,7 +246,7 @@ main h2 {
   padding: 0.5rem 1rem;
   border-radius: 0 5px 5px 0;
   border: none;
-  background-color: #444;
+  background-color: #704d33;
   color: white;
   font-weight: bold;
   cursor: pointer;
@@ -267,7 +254,7 @@ main h2 {
 }
 
 .footer-signup button:hover {
-  background-color: #666;
+  background-color: #e0ac6d;
 }
 
 
@@ -327,7 +314,7 @@ main h2 {
   content: '';
   width: 8px;
   height: 8px;
-  background: #38bdf8;
+  background: #b2b2b2;
   border-radius: 50%;
   position: absolute;
   bottom: 5px;
@@ -339,8 +326,8 @@ main h2 {
 #calendar-body th {
   width: 14.28%;
   padding: 10px;
-  background-color: #2a2a2a;
-  border-bottom: 2px solid #444;
+  background-color: #4a3325;
+  border-bottom: 2px solid #704d33;
   font-weight: bold;
 }
 
@@ -351,7 +338,7 @@ main h2 {
   padding: 20px;
   text-align: center;
   vertical-align: middle;
-  border: 1px solid #444;
+  border: 1px solid #704d33;
   background-color: #1c1c1c;
   cursor: pointer;
   transition: background-color 0.2s ease;
@@ -359,7 +346,7 @@ main h2 {
 }
 
 #calendar td:hover {
-  background-color: #2a2a2a;
+  background-color: #e0ac6d;
 }
 
 td.no-date {
@@ -369,14 +356,14 @@ td.no-date {
 
 #calendar td.today {
   background-color: #2e2e2e;
-  border: 2px solid #00bfff;
+  border: 2px solid #f5c16c;
   font-weight: bold;
   color: #ffffff;
 }
 
 #calendar td.selected-date {
-  background-color: #003366;
-  border: 2px solid #00bfff;
+  background-color: #4a3325;
+  border: 2px solid #f5c16c;
   color: #ffffff;
   font-weight: bold;
 }
@@ -393,7 +380,7 @@ td.no-date {
 
 .calendar-table th,
 .calendar-table td {
-  border: 1px solid #444;
+  border: 1px solid #704d33;
   padding: 20px; /* increase this for height */
   text-align: center;
   vertical-align: top;
@@ -420,9 +407,9 @@ td.no-date {
 }
 
 .calendar-nav {
-  background-color: #2a2a2a;
+  background-color: #4a3325;
   color: #ffffff;
-  border: 1px solid #444;
+  border: 1px solid #704d33;
   padding: 8px 12px;
   border-radius: 5px;
   cursor: pointer;
@@ -432,17 +419,17 @@ td.no-date {
 }
 
 .calendar-nav:hover {
-  background-color: #444;
+  background-color: #e0ac6d;
 }
 
 .event-preview {
   font-size: 0.7rem;
   margin-top: 4px;
-  background-color: #2a2a2a;
+  background-color: #4a3325;
   padding: 2px 4px;
-  border-left: 3px solid #00bfff;
+  border-left: 3px solid #f5c16c;
   border-radius: 3px;
-  color: #a0eaff;
+  color: #d2b48c;
 }
 
 
@@ -450,7 +437,7 @@ td.no-date {
 #calendar th {
   padding: 10px;
   text-align: center;
-  background-color: #333; /* or whatever your header color is */
+  background-color: #593c28; /* or whatever your header color is */
   color: #fff;
   font-weight: 600;
   border: 2px solid #222;
@@ -464,7 +451,7 @@ td.no-date {
   padding: 20px; /* Bigger clickable area */
   font-size: 1.2rem; /* Bigger numbers */
   text-align: center;
-  border: 1px solid #444;
+  border: 1px solid #704d33;
   position: relative;
   cursor: pointer;
   box-sizing: border-box;
@@ -503,7 +490,7 @@ td.no-date {
 }
 
 .event-detail, .permanent-event-message {
-  background: #1e1e1e;
+  background: #3b2b20;
   padding: 1rem;
   color: #ffffff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -523,7 +510,7 @@ td.no-date {
 
 .hours-box-link {
   text-decoration: none;
-  color: inherit;
+  color: #d2b48c;
   display: flex;
   justify-content: center;
 }
@@ -535,7 +522,7 @@ td.no-date {
   gap: 4rem;
   flex-wrap: wrap;
   max-width: 900px;
-  margin: 0 auto 40px auto;
+  margin: 20px auto 40px auto;
 }
 
 .hours-column {
@@ -582,7 +569,7 @@ td.no-date {
 
 .menu-list li {
   padding: 10px 0;
-  border-bottom: 1px solid #444;
+  border-bottom: 1px solid #704d33;
   font-size: 1.1rem;
 }
 
@@ -605,9 +592,9 @@ td.no-date {
   display: inline-block;
   padding: 10px 20px;
   width: 200px;
-  background-color: #2a2a2a;
+  background-color: #593c28;
   color: white;
-  border: 1px solid #444;
+  border: 1px solid #704d33;
   border-radius: 5px;
   font-size: 16px;
   text-decoration: none;
@@ -617,7 +604,7 @@ td.no-date {
 
 .book-button:hover,
 .mailing-button:hover {
-  background-color: #444;
+  background-color: #e0ac6d;
 }
 
 .logo {
@@ -627,7 +614,7 @@ td.no-date {
 }
 
 .highlight-block {
-  background: #1e1e1e;
+  background: #3b2b20;
   padding: 3rem 1rem;
   text-align: center;
 }
@@ -642,8 +629,8 @@ td.no-date {
 }
 
 .age-banner {
-  background-color: #fcbd4a;
-  color: #fff;
+  background-color: #0A1A2F;
+  color: #d2b48c;
   text-align: center;
   font-weight: bold;
   font-size: 0.95rem;
@@ -655,12 +642,10 @@ td.no-date {
   margin: 0;
 }
 
+
 /* === FONT STYLING === */
 
 /* Base body font */
-body {
-  font-family: 'Inter', sans-serif;
-}
 
 /* Header and title font */
 h1, h2, h3, h4, header h1, footer h3,
@@ -681,7 +666,7 @@ h1, h2 {
 
 .jam-night-message,
 .band-booking-message {
-  background: #1e1e1e;
+  background: #3b2b20;
   padding: 1rem;
   margin-top: -10px;
   color: #ffffff;
@@ -690,7 +675,7 @@ h1, h2 {
 
 .band-booking-message h3 {
   margin-top: 0;
-  color: #a0eaff;
+  color: #d2b48c;
 }
 
 .book-band-button {
@@ -698,16 +683,16 @@ h1, h2 {
   margin-top: 4px;
   font-size: 0.7rem;
   padding: 4px 6px;
-  background-color: #1e1e1e;
-  color: #00bfff;
-  border: 1px solid #00bfff;
+  background-color: #3b2b20;
+  color: #f5c16c;
+  border: 1px solid #f5c16c;
   border-radius: 4px;
   text-decoration: none;
   transition: background-color 0.2s ease;
 }
 
 .book-band-button:hover {
-  background-color: #003366;
+  background-color: #e0ac6d;
   color: #fff;
 }
 
@@ -767,7 +752,7 @@ h1, h2 {
 .mailing-button {
   padding: 0.5rem 1rem;
   font-size: 1rem;
-  background-color: #333;
+  background-color: #593c28;
   color: white;
   border: none;
   border-radius: 5px;
@@ -777,7 +762,7 @@ h1, h2 {
 }
 
 .mailing-button:hover {
-  background-color: #222;
+  background-color: #e0ac6d;
 }
 
 #emailFeedback {
@@ -796,14 +781,12 @@ h1, h2 {
   margin-right: -50vw;
   width: 100vw;
   
-  background-color: #1e3a5f; /* deep blue */
-  color: #f9f9f9;
+  background-color: #5c3b1f; /* deep blue */
+  color: #fef4e8;
   font-weight: 600;
   font-size: 1.2rem;
   padding: 1rem;
   text-align: center;
-  border-top: 2px solid #facc15;
-  border-bottom: 2px solid #facc15;
   cursor: pointer;
   transition: background-color 0.3s ease;
   z-index: 1;
@@ -811,7 +794,7 @@ h1, h2 {
 
 
 .music-banner:hover {
-  background-color: #2a4e7c;
+  background-color: #e0ac6d;
 }
 
 
@@ -865,7 +848,7 @@ h1, h2 {
 }
 
 .day.event {
-  background-color: #1e1e1e;
+  background-color: #3b2b20;
 }
 
 .day .date-number {
@@ -897,54 +880,6 @@ h1, h2 {
   }
 }
 
-/*
-.carousel-section {
-  width: 100%;
-  height: 400px;
-  overflow: hidden;
-  position: relative;
-}
-
-.carousel {
-  position: relative;
-  height: 100%;
-}
-
-.carousel-slide {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-  z-index: 0;
-}
-
-.carousel-slide.active {
-  opacity: 1;
-  z-index: 1;
-}
-
-.carousel-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.carousel-caption {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 4rem;
-  font-weight: bold;
-  text-align: center;
-  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
-  font-family: 'Playfair Display', serif;
-}
-  */
 
 .age-gate-overlay {
   position: fixed;
@@ -952,7 +887,7 @@ h1, h2 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(10, 10, 10, 0.95);
+  background: rgba(41, 31, 31, 0.9);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -960,7 +895,7 @@ h1, h2 {
 }
 
 .age-gate-box {
-  background: #111;
+  background: #3b2b20;
   color: #fff;
   padding: 2rem;
   text-align: center;
@@ -982,7 +917,7 @@ h1, h2 {
 }
 
 .age-gate-buttons button:hover {
-  background-color: #162b55;
+  background-color: #e0ac6d;
 }
 
 #vinyl-loader {
@@ -1041,7 +976,7 @@ h1, h2 {
 }
 
 .mailing-button:hover {
-  background-color: #156bc2;
+  background-color: #e0ac6d;
 }
 
 .more-events-section {
@@ -1049,17 +984,17 @@ h1, h2 {
   color: #fff;
   padding: 2rem;
   margin-top: 2rem;
-  border-top: 2px solid #444;
+  border-top: 2px solid #704d33;
   text-align: center;
 }
 
 .more-events-section a {
-  color: #4da6ff;
+  color: #d2b48c;
   text-decoration: none;
 }
 
 .more-events-section a:hover{
-  color: #3874b1;
+  color: #e0ac6d;
   text-decoration: none;
 }
 
@@ -1068,34 +1003,56 @@ h1, h2 {
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
-  margin: 0;
+  justify-content: flex-start;
+  gap: 2rem;
+  padding: 2rem 5vw;
+  max-width: 1000px;
 }
 
 .feature-row.reverse {
   flex-direction: row-reverse;
+  justify-content: flex-end;
+  max-width: 1000px;
+  padding: 2rem 5w 2rem 10vw;
 }
 
 .feature-row img {
-  width: 25vw;            /* smaller image width */
+  flex-shrink: 0;
+  width: 380px; /* fixed, manageable size */
   height: auto;
   aspect-ratio: 16 / 9;
   object-fit: cover;
-  display: block;
+  border-radius: 1rem;
 }
 
 .feature-text {
   flex: 1;
-  padding: 2rem 3rem;
-  background-color: #111;
+  min-width: 250px;
+  max-width: 600px;
   color: white;
+  padding: 2rem;
+  border-radius: 1rem;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* left align by default */
   justify-content: center;
-  text-align: left;
+}
+
+.feature-text h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #b2b7b9;
+  margin-bottom: 1rem;
+}
+
+.feature-text p {
+  line-height: 1.5;
+  font-size: 1rem;
+  color: #ddd;
 }
 
 .feature-row.reverse .feature-text {
   text-align: right;
-  align-items: flex-end; /* optional: aligns text content like h3/p to the right edge */
+  align-items: flex-end;
 }
+
+
