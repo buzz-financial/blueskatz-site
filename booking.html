@@ -4,7 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Your Band | Blues Katz Bar</title>
+    <title>Home | Blues Katz Bar</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <!-- FullCalendar CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css" rel="stylesheet">
+
+    <!-- AOS Animation CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <!-- External CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -15,62 +25,134 @@
       <h1>
         <!-- Logo is clickable and links to the home page -->
         <a href="#" id="home-link">
-            <img src="blues.png" alt="Blues Katz Logo" style="height: 50px; vertical-align: middle;">
+            <img src="bluesupdated.png" alt="Blues Katz Logo" class="logo" loading="lazy">
         </a>
       </h1>        
       <nav>
             <ul>
-                <li><a href="booking.html">Booking</a></li>
-                <li><a href="#calendar">Live Music</a></li>
+                <li><a href="index.html#live-music">Live Music</a></li>
                 <li><a href="menu.html" target="_blank">Menu</a></li>
-                <li><a href="#">Catering</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="index.html#more-events">About</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Booking Form Section -->
-    <main>
-        <section>
-            <h2>Book Your Band</h2>
-            <p>Please fill out the form below to book your band for an event at Blues Katz Bar:</p>
-            <form action="submit_form.php" method="POST" target="_blank">
-                <div>
-                    <label for="band-name">Band Name:</label>
-                    <input type="text" id="band-name" name="band-name" required>
-                </div>
-                <div>
-                    <label for="contact-name">Your Name:</label>
-                    <input type="text" id="contact-name" name="contact-name" required>
-                </div>
-                <div>
-                    <label for="email">Email Address:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div>
-                    <label for="phone">Phone Number:</label>
-                    <input type="tel" id="phone" name="phone">
-                </div>
-                <div>
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="4" required></textarea>
-                </div>
-                <button type="submit">Submit</button>
-            </form>
-        </section>
-    </main>
+    <div class="age-banner">
+      21+ Only — Valid ID Required for Entry
+    </div>
+
+    
+  <main class="booking-page">
+    <section class="booking-form-section">
+      <h2>Band Booking Request</h2>
+      <p>Thanks for your interest in playing at Blues Katz Bar! We book live music every Saturday night. Fill out the form below and we’ll get back to you soon.</p>
+      
+      <form id="bookingForm">
+        <label for="name">Name or Band Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Tell us about your music, availability, and any links:</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+
+        <button type="submit" class="mailing-button">Send Booking Request</button>
+        <p id="formFeedback" class="form-feedback"></p>
+      </form>
+    </section>
+  </main>
+
+
+  <script>
+    document.getElementById("bookingForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      document.getElementById("formFeedback").textContent =
+        "Thanks for your interest! We'll review your message and get back to you shortly.";
+      this.reset();
+    });
+
+    function closeTab() {
+      window.open('', '_self').close();
+    }
+  </script>
 
     <!-- Footer Section -->
     <footer id="about">
-      <h3>About</h3>
-      <ul>
-        <li><a href="mailto:blueskatzgrill@gmail.com">Contact</a></li>
-        <li><a href="#">Jobs</a></li>
-        <li><a href="https://www.facebook.com/blueskatzbar" target="_blank">Social Media</a></li>
-      </ul>
-      <p>&copy; 2025 Blues Katz Rock n Roll Grill. All rights reserved.</p>
+      <div class="footer-columns">
+        
+        <!-- Left Column -->
+        <div class="footer-about">
+          <h3>About</h3>
+          <ul>
+            <li><a href="mailto:blueskatzgrill@gmail.com">Contact</a></li>
+            <li><a href="#">Jobs</a></li>
+            <li><a href="https://www.facebook.com/blueskatzbar" target="_blank">Social Media</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-mailing">
+          <h3>Stay in the Loop</h3>
+          <form id="emailForm">
+            <input
+              type="email"
+              id="emailInput"
+              placeholder="example@email.com"
+              required
+            />
+            <button type="submit" class="mailing-button">SUBSCRIBE</button>
+          </form>
+          <p id="emailFeedback"></p>
+        </div>
+    
+        <!-- Right Column -->
+        <div class="footer-map">
+          <h3>Find Us</h3>
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps?q=Blues+Katz+Bar&output=embed"
+              width="100%"
+              height="200"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    
+      </div>
+    
+      <p class="footer-copy">&copy; 2025 Blues Katz Rock n Roll Grill. All rights reserved.</p>
     </footer>
+    
+
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.js"></script>
+<script src="calendar.js"></script>
+<script src="main.js"></script>
+
+<!-- AOS Animation JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 700, // smoothness
+    once: true     // animate only once
+  });
+</script>
+
+<div id="age-gate" class="age-gate-overlay">
+  <div class="age-gate-box">
+    <h2>Are you 21+?</h2>
+    <div class="age-gate-buttons">
+      <button onclick="confirmAge(true)">Yes</button>
+      <button onclick="confirmAge(false)">No</button>
+    </div>
+  </div>
+</div>
+
 
 </body>
-
 </html>
+
+
+
+

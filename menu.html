@@ -4,7 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu | Blues Katz Bar</title>
+    <title>Home | Blues Katz Bar</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <!-- FullCalendar CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css" rel="stylesheet">
+
+    <!-- AOS Animation CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
     <!-- External CSS -->
     <link rel="stylesheet" href="styles.css">
@@ -12,148 +20,111 @@
 
 <body>
 
-    <!-- Header -->
+    <!-- Header Section -->
     <header>
-        <h1>
-            <a href="index.html" id="home-link">
-                <img src="logo.png" alt="Blues Katz Logo" style="height: 50px; vertical-align: middle;">
-            </a>
-            BLUES KATZ BAR
-        </h1>
-        <nav>
+      <h1>
+        <!-- Logo is clickable and links to the home page -->
+        <a href="#" id="home-link">
+            <img src="bluesupdated.png" alt="Blues Katz Logo" class="logo" loading="lazy">
+        </a>
+      </h1>        
+      <nav>
             <ul>
-                <li><a href="index.html#calendar">Live Music</a></li>
-                <li><a href="index.html">Booking</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="index.html#about">About</a></li>
+                <li><a href="#calendar">Live Music</a></li>
+                <li><a href="menu.html" target="_blank">Menu</a></li>
+                <li><a href="#more-events">About</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Main Menu Content -->
-    <!-- Main Menu Content -->
-<main>
-    <!-- Bar Menu -->
-    <section>
-        <h2>Bar Menu</h2>
-        <p>Until 9pm</p>
-        <div class="menu-item">
-            <h3>Fish & Chips</h3>
-            <p>3 Pieces of Beer Battered Cod, Tarter Sauce, Fries</p>
-            <p class="price">$10.31</p>
-        </div>
-        <div class="menu-item">
-            <h3>Classic Cheeseburger</h3>
-            <p>Lettuce, Tomatoes, Pickles, Cheddar Cheese, Ketchup, Mustard. Add Pastrami or another Beef Patty $3.</p>
-            <p class="price">$6.55</p>
-        </div>
-        <div class="menu-item">
-            <h3>California Club</h3>
-            <p>Grilled Turkey, Bacon, Avocado, Cheddar Cheese, Mayo, Onion, Tomato, Lettuce on White, Wheat, or Sourdough.</p>
-            <p class="price">$9.28</p>
-        </div>
-        <div class="menu-item">
-            <h3>Wings</h3>
-            <p>Traditional bone-in Wings served with Hot Buffalo or BBQ, Carrot & Celery sticks</p>
-            <p class="price">$7.49</p>
-        </div>
-        <div class="menu-item">
-            <h3>Turkey Supreme</h3>
-            <p>Cold Turkey, Cream Cheese, Cranberry, Mayo, Lettuce on White, Wheat, or Sourdough.</p>
-            <p class="price">$8.43</p>
-        </div>
-        <div class="menu-item">
-            <h3>French Fries</h3>
-            <p></p>
-            <p class="price">$3.28</p>
-        </div>
-        <div class="menu-item">
-            <h3>Onion Rings</h3>
-            <p></p>
-            <p class="price">$4.22</p>
-        </div>
-    </section>
+    <div class="age-banner">
+      21+ Only — Valid ID Required for Entry
+    </div>
 
-    <!-- Breakfast Menu -->
-    <section>
-        <h2>Breakfast</h2>
-        <div class="menu-item">
-            <h3>BK Breakfast</h3>
-            <p>Two Eggs any style, Country Potatoes, & Toast. Add Ham, Bacon, or Sausage for $3</p>
-            <p class="price">$6.28</p>
-        </div>
-        <div class="menu-item">
-            <h3>Reido's Burrito</h3>
-            <p>Two Eggs, Avocado, Cheese, Pinto Beans, Salsa, Sour Cream. Choose Ham, Bacon, or Sausage</p>
-            <p class="price">$9.28</p>
-        </div>
-        <div class="menu-item">
-            <h3>Angels Landing</h3>
-            <p>One Egg, Cheese, Bacon, Avocado, Tomato Basil Dressing, on a Croissant.</p>
-            <p class="price">$9.28</p>
-        </div>
-    </section>
+    <!--
+    <div id="vinyl-loader">
+      <img src="vinylspin.png" alt="Loading..." class="spinning-record" />
+    </div>    -->
 
-    <!-- Sides -->
-    <section>
-        <h2>Sides</h2>
-        <div class="menu-item">
-            <p>One Egg - $3</p>
-            <p>Avocado - $4</p>
-            <p>Bacon, Ham, or Sausage - $4</p>
-            <p>Potatoes - $4</p>
-            <p>Toast - $3</p>
-            <p class="price">$4</p>
-        </div>
-    </section>
+    <!-- Main Content Section -->
+    <main>
+      <div class="bar-menu">
+        <p>implement menu items</p>
+      </div>
+    </main>
 
-    <!-- Coffee -->
-    <section>
-        <h2>Coffee</h2>
-        <div class="menu-item">
-            <h3>Large Latte</h3>
-            <p>12 oz. 1 Shot - Add flavor $.50 - Add Oat Milk $.50</p>
-            <p class="price">$3.50</p>
-        </div>
-        <div class="menu-item">
-            <h3>XL Latte</h3>
-            <p>16 oz. 2 Shots - Add flavor $.50 - Add Oat Milk $.50</p>
-            <p class="price">$3.75</p>
-        </div>
-        <div class="menu-item">
-            <h3>XXL</h3>
-            <p>20 oz. 3 Shots - Add flavor $.50 - Add Oat Milk $.50</p>
-            <p class="price">$4.00</p>
-        </div>
-        <div class="menu-item">
-            <h3>Large Americano</h3>
-            <p>12 oz. 1 Shot</p>
-            <p class="price">$2.75</p>
-        </div>
-        <div class="menu-item">
-            <h3>XL Americano</h3>
-            <p>16 oz. 2 shots</p>
-            <p class="price">$3.00</p>
-        </div>
-        <div class="menu-item">
-            <h3>XXL Americano</h3>
-            <p>20 oz. 3 Shots</p>
-            <p class="price">$3.25</p>
-        </div>
-    </section>
-</main>
-
-
-    <!-- Footer -->
+    <!-- Footer Section -->
     <footer id="about">
-        <h3>About</h3>
-        <ul>
-            <li><a href="#">Contact</a></li>
+      <div class="footer-columns">
+        
+        <!-- Left Column -->
+        <div class="footer-about">
+          <h3>About</h3>
+          <ul>
+            <li><a href="mailto:blueskatzgrill@gmail.com">Contact</a></li>
             <li><a href="#">Jobs</a></li>
-            <li><a href="#">Social Media</a></li>
-        </ul>
-        <p>&copy; 2025 Blues Katz Rock n Roll Grill. All rights reserved.</p>
+            <li><a href="https://www.facebook.com/blueskatzbar" target="_blank">Social Media</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-mailing">
+          <h3>Stay in the Loop</h3>
+          <form id="emailForm">
+            <input
+              type="email"
+              id="emailInput"
+              placeholder="example@email.com"
+              required
+            />
+            <button type="submit" class="mailing-button">SUBSCRIBE</button>
+          </form>
+          <p id="emailFeedback"></p>
+        </div>
+    
+        <!-- Right Column -->
+        <div class="footer-map">
+          <h3>Find Us</h3>
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps?q=Blues+Katz+Bar&output=embed"
+              width="100%"
+              height="200"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    
+      </div>
+    
+      <p class="footer-copy">&copy; 2025 Blues Katz Rock n Roll Grill. All rights reserved.</p>
     </footer>
+    
+
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.js"></script>
+<script src="calendar.js"></script>
+<script src="main.js"></script>
+
+<!-- AOS Animation JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 700, // smoothness
+    once: true     // animate only once
+  });
+</script>
+
+<div id="age-gate" class="age-gate-overlay">
+  <div class="age-gate-box">
+    <h2>Are you 21+?</h2>
+    <div class="age-gate-buttons">
+      <button onclick="confirmAge(true)">Yes</button>
+      <button onclick="confirmAge(false)">No</button>
+    </div>
+  </div>
+</div>
+
 
 </body>
 </html>

@@ -1251,3 +1251,100 @@ h1, h2 {
     flex-grow: 1;
   }
 }
+
+/* Booking Page Styling */
+.booking-page {
+  background-color: inherit; /* Light tan background */
+  padding: 40px;
+  font-family: 'Georgia', serif; /* Country-style font */
+}
+
+.booking-form-section {
+  background-color: #bba371; /* Soft tan background */
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.booking-form-section h2 {
+  color: #8b5e3c; /* Deep brown for headings */
+  text-align: center;
+  font-size: 2rem;
+}
+
+.booking-form-section p {
+  color: #7a4e28; /* Medium brown for description */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.booking-form-section label {
+  color: #5b3e1e; /* Darker brown for labels */
+  font-size: 1.1rem;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.booking-form-section input,
+.booking-form-section textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #c2a47d; /* Light brown border */
+  border-radius: 4px;
+  background-color: #fff;
+  font-size: 1rem;
+}
+
+.booking-form-section textarea {
+  resize: vertical;
+}
+
+.mailing-button {
+  display: block;
+  width: 200px;
+  padding: 12px;
+  margin: 0 auto;
+  background-color: #8b5e3c; /* Deep brown for button */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.mailing-button:hover {
+  background-color: #7a4e28; /* Darker brown on hover */
+}
+
+.form-feedback {
+  text-align: center;
+  color: #8b5e3c;
+  font-size: 1rem;
+  margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+  .booking-form-section {
+    padding: 20px;
+  }
+
+  .booking-form-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .booking-form-section p {
+    font-size: 1rem;
+  }
+
+  .mailing-button {
+    width: 100%;
+    font-size: 1rem;
+  }
+}
+

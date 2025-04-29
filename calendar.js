@@ -234,7 +234,7 @@ document.addEventListener('DOMContentLoaded', () => {
             isFuture(clickedDateObj) &&
             !events.some(event => event.date === dateStr)) {
               const bookBtn = document.createElement("a");
-              bookBtn.href = `/book?date=${dateStr}`;
+              bookBtn.href = "booking.html";
               bookBtn.textContent = "Book";
               bookBtn.className = "book-band-button";
               cell.appendChild(bookBtn);
