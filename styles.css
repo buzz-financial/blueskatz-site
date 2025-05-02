@@ -674,6 +674,8 @@ h1, h2 {
   line-height: 1.2;
 }
 
+/* Info boxes */
+
 .event-detail,
 .jam-night-message,
 .band-booking-message {
@@ -720,7 +722,7 @@ h1, h2 {
 }
 
 
-
+/* Images */
 
 .image-break::before {
   content: "";
@@ -748,6 +750,8 @@ h1, h2 {
   transform: translateY(0);
   opacity: 1;
 }
+
+/* Mailing */
 
 .mailing-list-section {
   display: flex;
@@ -820,6 +824,7 @@ h1, h2 {
   background-color: #e0ac6d;
 }
 
+/* Calendar section */
 
 #calendar-container {
   display: grid;
@@ -896,7 +901,7 @@ h1, h2 {
 }
 
 
-
+/* Age gate */
 
 .age-gate-overlay {
   position: fixed;
@@ -937,6 +942,7 @@ h1, h2 {
   background-color: #e0ac6d;
 }
 
+/*
 #vinyl-loader {
   position: fixed;
   top: 0;
@@ -955,7 +961,7 @@ h1, h2 {
   height: 100px;
   animation: spin 1.5s linear infinite;
   filter: drop-shadow(0 0 6px #00faff);
-}
+} */
 
 @keyframes spin {
   from { transform: rotate(0deg); }
@@ -996,6 +1002,8 @@ h1, h2 {
   background-color: #e0ac6d;
 }
 
+/* More events */
+
 .more-events-section {
   background-color: #111;
   color: #fff;
@@ -1014,6 +1022,9 @@ h1, h2 {
   color: #e0ac6d;
   text-decoration: none;
 }
+
+
+/* Features */
 
 .features-section {
   max-width: 1200px; /* Or any large width that fits your layout */
@@ -1079,9 +1090,6 @@ h1, h2 {
   text-align: right;
   align-items: flex-end;
 }
-
-
-
 
 .upcoming-events-container {
   display: none;  /* Hide this by default (desktop view) */
@@ -1166,39 +1174,9 @@ h1, h2 {
   justify-content: center;
 }
 
-/* Textarea should still have resizing */
 .booking-form-section textarea {
   resize: vertical;
 }
-
-/* Mobile-specific adjustments */
-@media (max-width: 768px) {
-  .booking-form-section {
-    padding: 15px;  /* Adjust padding to fit better on mobile */
-  }
-
-  .booking-form-section form {
-    width: 100%;         /* Ensure form takes up most of the screen */
-    max-width: none;     /* Remove max-width to allow flexibility */
-  }
-
-  .booking-form-section h2 {
-    font-size: 1.5rem;   /* Adjust header size for mobile */
-  }
-
-  .booking-form-section p {
-    font-size: 1rem;     /* Adjust paragraph font size */
-  }
-
-  .booking-form-section input,
-  .booking-form-section textarea,
-  .booking-form-section button {
-    width: 90%;         /* Form elements take full width on mobile */
-    font-size: 1rem;     /* Adjust font size for readability */
-    max-width: 100%;     /* Ensure full width for mobile screens */
-  }
-}
-
 
 .mailing-button {
   display: block;
@@ -1236,24 +1214,6 @@ h1, h2 {
   padding: 20px;
 }
 
-/* Make event carousel horizontally scrollable */
-.event-carousel {
-  display: flex;
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory;
-  margin-bottom: 20px;
-  gap: 10px;
-}
-
-.event-card {
-  flex: none;
-  width: 80%; /* or a fixed width, e.g., 300px */
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  padding: 20px;
-  box-sizing: border-box;
-  scroll-snap-align: center;
-}
 
 /* Button styles for navigation arrows */
 .event-arrow {
@@ -1268,15 +1228,10 @@ h1, h2 {
   outline: none;
 }
 
-/* Arrows alignment */
 #event-arrows {
   display: flex;
   justify-content: center;
   gap: 20px;
-}
-
-.mobile-view {
-  text-align: center; /* Center content for mobile */
 }
 
 .event-info-box {
@@ -1284,89 +1239,6 @@ h1, h2 {
   flex-direction: column;
   align-items: center;
 }
-
-/* Mobile layout adjustments (max-width 768px) */
-@media only screen and (max-width: 768px) {
-  /* Hide the calendar and its title on mobile */
-  #calendar-wrapper {
-    display: none;
-  }
-
-  /* Show the upcoming events box on mobile */
-  .event-info-box {
-    display: block;
-  }
-
-  /* Hide the static upcoming-event-box if you're not using it */
-  .upcoming-event-box {
-    display: none;
-  }
-
-  /* Center content and adjust layout */
-  .jam-night-message,
-  .band-booking-message,
-  .event-detail {
-    text-align: center;
-  }
-
-  #calendar-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  #right-column {
-    max-width: 90%;
-    margin-top: 1rem;
-  }
-
-  .calendar {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .jam-night-message,
-  .band-booking-message {
-    width: 100%;
-    margin-top: 0;
-  }
-
-  #right-column {
-    max-width: 90%;
-    width: 100%;
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .event-detail,
-  .jam-night-message,
-  .band-booking-message {
-    width: 100%;
-    max-width: 500px;
-    margin-bottom: 1rem; /* Adds space between boxes */
-    box-sizing: border-box;
-  }
-  
-
-  /* SHOW arrows on mobile */
-  #prev-event,
-  #next-event {
-    display: inline-block;
-    margin: 0 10px;
-  }
-}
-
-/* Desktop-specific: hide arrows */
-@media only screen and (min-width: 769px) {
-  #prev-event,
-  #next-event {
-    display: none;
-  }
-}
-
 
 .nav-arrow {
   background: none;
@@ -1381,16 +1253,8 @@ h1, h2 {
 }
 
 
-@media (max-width: 768px) {
-  .music-banner {
-    display: none;
-  }
 
-  .footer-about {
-    display: none !important;
-  }
-}
-
+/* Menu */
 .menu-section {
   padding: 2rem;
   max-width: 800px;

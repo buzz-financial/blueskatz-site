@@ -1,0 +1,127 @@
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+    .booking-form-section {
+      padding: 15px;  /* Adjust padding to fit better on mobile */
+    }
+  
+    .booking-form-section form {
+      width: 100%;         /* Ensure form takes up most of the screen */
+      max-width: none;     /* Remove max-width to allow flexibility */
+    }
+  
+    .booking-form-section h2 {
+      font-size: 1.5rem;   /* Adjust header size for mobile */
+    }
+  
+    .booking-form-section p {
+      font-size: 1rem;     /* Adjust paragraph font size */
+    }
+  
+    .booking-form-section input,
+    .booking-form-section textarea,
+    .booking-form-section button {
+      width: 90%;         /* Form elements take full width on mobile */
+      font-size: 1rem;     /* Adjust font size for readability */
+      max-width: 100%;     /* Ensure full width for mobile screens */
+    }
+  }
+
+  
+/* Mobile layout adjustments (max-width 768px) */
+@media only screen and (max-width: 768px) {
+    /* Hide the calendar and its title on mobile */
+    #calendar-wrapper {
+      display: none;
+    }
+  
+    /* Show the upcoming events box on mobile */
+    .event-info-box {
+      display: block;
+    }
+  
+    /* Hide the static upcoming-event-box if you're not using it */
+    .upcoming-event-box {
+      display: none;
+    }
+  
+    /* Center content and adjust layout */
+    .jam-night-message,
+    .band-booking-message,
+    .event-detail {
+      text-align: center;
+    }
+  
+    #calendar-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+  
+    #right-column {
+      max-width: 90%;
+      margin-top: 1rem;
+    }
+  
+    .calendar {
+      width: 100%;
+      max-width: 100%;
+    }
+  
+    .jam-night-message,
+    .band-booking-message {
+      width: 100%;
+      margin-top: 0;
+    }
+  
+    #right-column {
+      max-width: 90%;
+      width: 100%;
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .event-detail,
+    .jam-night-message,
+    .band-booking-message {
+      width: 100%;
+      max-width: 500px;
+      margin-bottom: 1rem; /* Adds space between boxes */
+      box-sizing: border-box;
+    }
+    
+  
+    /* SHOW arrows on mobile */
+    #prev-event,
+    #next-event {
+      display: inline-block;
+      margin: 0 10px;
+    }
+  }
+
+  /* Desktop-specific: hide arrows */
+@media only screen and (min-width: 769px) {
+    #prev-event,
+    #next-event {
+      display: none;
+    }
+  }
+
+  
+@media (max-width: 768px) {
+    .music-banner {
+      display: none;
+    }
+  
+    .footer-about {
+      display: none !important;
+    }
+  }
+
+  
+.mobile-view {
+text-align: center; /* Center content for mobile */
+}
