@@ -826,7 +826,7 @@ h1, h2 {
   grid-template-columns: 1fr 350px; /* Two columns: calendar and right column */
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 1rem;
+  gap: 2rem;
   flex-direction: column;
   margin-top: 1rem;
   margin-left: auto;
@@ -1391,3 +1391,48 @@ h1, h2 {
   }
 }
 
+.menu-section {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.menu-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #fefefe;
+  border-bottom: 2px solid #cc9933;
+  padding-bottom: 0.5rem;
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-list li {
+  margin-bottom: 1.5rem;
+  border-bottom: 1px dotted #555;
+  padding-bottom: 1rem;
+}
+
+.menu-list h3 {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  color: #fff;
+}
+
+.menu-list p {
+  margin: 0.25rem 0;
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.menu-list span {
+  float: right;
+  color: #cc9933;
+  font-weight: 600;
+}
