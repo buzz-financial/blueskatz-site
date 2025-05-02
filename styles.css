@@ -512,7 +512,6 @@ td.no-date {
 
 .event-detail {
   background: #3b2b20;
-  padding: 1rem;
   color: #ffffff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
@@ -675,6 +674,7 @@ h1, h2 {
   line-height: 1.2;
 }
 
+.event-detail,
 .jam-night-message,
 .band-booking-message {
   background: #3b2b20;
