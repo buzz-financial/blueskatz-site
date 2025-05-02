@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener('DOMContentLoaded', function () {
   const leftArrow = document.querySelector('.left-arrow');
   const rightArrow = document.querySelector('.right-arrow');
-  const eventInfoBox = document.querySelector('.event-info-box');
+  const eventInfoBox = document.getElementById('event-info');
   
   let currentEventIndex = 0;
   const events = [/* Array of events data */]; // Your events data
@@ -133,9 +133,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // Cache elements
-const eventInfoBox = document.querySelector('.event-info-box');
-const prevArrow = document.querySelector('.prev-event');
-const nextArrow = document.querySelector('.next-event');
+const eventInfoBox = document.getElementById('event-info');
+const prevArrow = document.getElementById('prev-event');
+const nextArrow = document.getElementById('next-event');
+
 let currentEventIndex = 0;
 
 // Function to update the event details
@@ -145,12 +146,10 @@ function updateEventInfo(eventIndex) {
       <h3>${event.title}</h3>
       <p><strong>Date:</strong> ${event.date}</p>
       <p><strong>Time:</strong> ${event.time}</p>
-      <p><strong>Description:</strong> ${event.description}</p>
   `;
   eventInfoBox.setAttribute('data-event-index', eventIndex);
   // Update the 'Next Event' card number
   const eventNumber = eventIndex + 1; // Event # is 1-based
-  eventInfoBox.querySelector('.event-number').textContent = `#${eventNumber}`;
 }
 
 // Initialize the first event
@@ -186,3 +185,5 @@ function handleMobileView() {
 // Call the mobile view handler on window resize
 window.addEventListener('resize', handleMobileView);
 handleMobileView();
+
+

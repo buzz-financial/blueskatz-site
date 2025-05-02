@@ -500,11 +500,6 @@ td.no-date {
 
 /* === EVENT PANEL === */
 
-#event-detail {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-} 
 
 #event-panel {
   flex: 1;
@@ -549,6 +544,7 @@ td.no-date {
   flex-wrap: wrap;
   max-width: 900px;
   margin: 20px auto 40px auto;
+  padding-top: 30px;
 }
 
 .hours-column {
@@ -561,6 +557,7 @@ td.no-date {
 
 .hours-column:hover {
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+
 }
 
 .hours-column h3 {
@@ -568,6 +565,9 @@ td.no-date {
   margin-top: 0;
 }
 
+.hours-column button {
+  margin-top: 20px; /* Adjust the spacing to your preference */
+}
 
 
 /* === MISC ELEMENTS === */
@@ -679,7 +679,7 @@ h1, h2 {
 .band-booking-message {
   background: #3b2b20;
   padding: 1rem;
-  margin-top: -10px;
+  margin-top: 10px;
   color: #ffffff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
@@ -822,10 +822,11 @@ h1, h2 {
 
 
 #calendar-container {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 350px; /* Two columns: calendar and right column */
+  justify-content: flex-start;
   align-items: flex-start;
-  gap: 2rem;
+  gap: 1rem;
   flex-direction: column;
   margin-top: 1rem;
   margin-left: auto;
@@ -833,8 +834,15 @@ h1, h2 {
   padding: 1rem;
 }
 
+#right-column {
+  max-width: 350px;
+  min-width: 300px;
+  grid-column: 2;
+  padding-left: 1rem;
+}
+
 #calendar-wrapper {
-  flex: 2;
+  grid-column: 1;
 }
 
 #event-panel {
@@ -1277,38 +1285,88 @@ h1, h2 {
   align-items: center;
 }
 
-/* Hide the calendar for mobile layouts */
+/* Mobile layout adjustments (max-width 768px) */
 @media only screen and (max-width: 768px) {
-  /* Hide the calendar and its title */
+  /* Hide the calendar and its title on mobile */
   #calendar-wrapper {
     display: none;
   }
 
-  #calendar-title-wrapper {
-    display: none;
-  }
-
-  /* Hide the upcoming events box on mobile */
+  /* Show the upcoming events box on mobile */
   .event-info-box {
-    display: block; /* Make sure the event info box is visible */
+    display: block;
   }
 
-  /* Remove the upcoming event box from view */
+  /* Hide the static upcoming-event-box if you're not using it */
   .upcoming-event-box {
     display: none;
   }
 
-  /* Adjust event info box layout for mobile */
-  .event-info-box button {
-    width: 100%;
-    margin: 5px 0;
-  }
-
-  /* Center content for mobile */
-  .jam-night-message, .band-booking-message {
+  /* Center content and adjust layout */
+  .jam-night-message,
+  .band-booking-message,
+  .event-detail {
     text-align: center;
   }
+
+  #calendar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  #right-column {
+    max-width: 90%;
+    margin-top: 1rem;
+  }
+
+  .calendar {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .jam-night-message,
+  .band-booking-message {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  #right-column {
+    max-width: 90%;
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .event-detail,
+  .jam-night-message,
+  .band-booking-message {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 1rem; /* Adds space between boxes */
+    box-sizing: border-box;
+  }
+  
+
+  /* SHOW arrows on mobile */
+  #prev-event,
+  #next-event {
+    display: inline-block;
+    margin: 0 10px;
+  }
 }
+
+/* Desktop-specific: hide arrows */
+@media only screen and (min-width: 769px) {
+  #prev-event,
+  #next-event {
+    display: none;
+  }
+}
+
 
 .nav-arrow {
   background: none;
