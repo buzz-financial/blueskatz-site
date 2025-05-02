@@ -23,7 +23,7 @@ header {
   color: #593c28;
   padding: 1rem 2rem;
   text-align: center;
-  font-style: bold;
+  font-weight: bold;
 }
 
 header h1 {
@@ -500,6 +500,12 @@ td.no-date {
 
 /* === EVENT PANEL === */
 
+#event-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} 
+
 #event-panel {
   flex: 1;
   width: 500px;
@@ -509,7 +515,7 @@ td.no-date {
   gap: 1rem;
 }
 
-.event-detail, .permanent-event-message {
+.event-detail {
   background: #3b2b20;
   padding: 1rem;
   color: #ffffff;
@@ -562,22 +568,7 @@ td.no-date {
   margin-top: 0;
 }
 
-@media (max-width: 768px) {
-  .hours-container {
-    flex-direction: column;
-    gap: 15px;
-  }
 
-  .calendar-wrapper {
-    flex-direction: column-reverse;
-    align-items: center;
-  }
-
-  #event-info {
-    width: 100%;
-    text-align: center;
-  }
-}
 
 /* === MISC ELEMENTS === */
 
@@ -697,6 +688,18 @@ h1, h2 {
   margin-top: 0;
   color: #d2b48c;
 }
+/* Style for the "form" link in the band-booking-message */
+.band-booking-message a {
+  text-decoration: none; /* Removes the underline */
+  color: #3857aa; /* Set to a dark blue that fits the theme (adjust as needed) */
+  font-weight: bold; /* Optional: Make the link stand out more */
+}
+
+/* Hover effect for the link */
+.band-booking-message a:hover {
+  color: #F59E0B; /* Hover color (a golden/yellow shade) */
+}
+
 
 .book-band-button {
   display: inline-block;
@@ -823,6 +826,7 @@ h1, h2 {
   justify-content: space-between;
   align-items: flex-start;
   gap: 2rem;
+  flex-direction: column;
   margin-top: 1rem;
   margin-left: auto;
   margin-right: auto;
@@ -883,22 +887,7 @@ h1, h2 {
   line-height: 1.4;
 }
 
-/* Optional: make the calendar grid responsive */
-@media (max-width: 768px) {
-  .calendar {
-    grid-template-columns: repeat(7, 1fr);
-  }
 
-  .day {
-    min-height: 80px;
-    font-size: 12px;
-    padding: 6px;
-  }
-
-  .day .event-text {
-    font-size: 12px;
-  }
-}
 
 
 .age-gate-overlay {
@@ -1018,6 +1007,14 @@ h1, h2 {
   text-decoration: none;
 }
 
+.features-section {
+  max-width: 1200px; /* Or any large width that fits your layout */
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
 
 .feature-row {
   display: flex;
@@ -1075,121 +1072,8 @@ h1, h2 {
   align-items: flex-end;
 }
 
-/* Mobile Styles */
-@media (max-width: 768px) {
-  /* Header */
-  header h1 {
-    font-size: 1.5rem; /* Adjust header font size for mobile */
-  }
 
-  /* Main content */
-  main h2 {
-    font-size: 1.2rem; /* Adjust subheading font size */
-  }
 
-  /* Footer */
-  .footer-columns {
-    flex-direction: column; /* Stack footer columns */
-    align-items: flex-start;
-  }
-
-  .footer-columns > div {
-    flex: 1 1 100%; /* Allow footer sections to stack */
-    margin-bottom: 1rem;
-  }
-
-  /* Calendar */
-  .calendar {
-    font-size: 1rem; /* Adjust font size */
-    padding: 0.5rem;
-  }
-
-  .calendar-day {
-    width: 90px; /* Reduce calendar day width */
-    height: 90px; /* Reduce calendar day height */
-  }
-
-  .calendar-grid {
-    grid-template-columns: repeat(7, 1fr); /* Make calendar grid fully responsive */
-  }
-
-  /* Event Panel */
-  #event-panel {
-    width: 100%; /* Ensure event panel is full-width on mobile */
-  }
-
-  .event-detail, .permanent-event-message {
-    padding: 0.8rem; /* Adjust padding */
-  }
-
-  /* Menu & Buttons */
-  .button-section {
-    flex-direction: column; /* Stack buttons vertically */
-    gap: 15px;
-  }
-
-  .book-button, .mailing-button {
-    width: 100%; /* Make buttons full-width */
-  }
-
-  /* Footer */
-  .footer-columns > div {
-    margin: 0;
-    flex: 1;
-  }
-
-  /* Hours Container */
-  .hours-container {
-    flex-direction: column;
-    gap: 20px;
-    padding: 1rem;
-  }
-
-  /* Logo */
-  .logo {
-    height: 80px; /* Adjust logo size */
-    width: auto;
-  }
-
-  /* Calendar Navigation */
-  .calendar-nav {
-    font-size: 14px;
-    padding: 6px 10px;
-  }
-}
-
-/* Tablet Styles (between 768px and 1024px) */
-@media (min-width: 768px) and (max-width: 1024px) {
-  header h1 {
-    font-size: 1.8rem;
-  }
-
-  .footer-columns {
-    gap: 1.5rem;
-  }
-
-  .calendar-day {
-    width: 100px;
-    height: 100px;
-  }
-
-  .calendar-nav {
-    font-size: 16px;
-  }
-
-  .button-section {
-    gap: 25px;
-  }
-
-  .logo {
-    height: 90px;
-  }
-}
-
-/* Default styling for desktop (calendar visible) */
-#calendar {
-  display: block;  /* Calendar is shown by default */
-}
 
 .upcoming-events-container {
   display: none;  /* Hide this by default (desktop view) */
@@ -1217,46 +1101,17 @@ h1, h2 {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-/* Mobile styling: Hide calendar and show upcoming events with arrows */
-@media (max-width: 768px) {
-  #calendar {
-    display: none;  /* Hide calendar on mobile */
-  }
-
-  .upcoming-events-container {
-    display: flex;  /* Show upcoming events section */
-    width: 90%;
-    margin: 0 auto;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .arrow {
-    display: inline-block;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 10px;
-    border-radius: 50%;
-  }
-
-  .arrow.left-arrow {
-    margin-right: 10px;
-  }
-
-  .arrow.right-arrow {
-    margin-left: 10px;
-  }
-
-  .event-info-box {
-    flex-grow: 1;
-  }
-}
-
 /* Booking Page Styling */
 .booking-page {
   background-color: inherit; /* Light tan background */
-  padding: 40px;
   font-family: 'Georgia', serif; /* Country-style font */
+  display: flex;
+  justify-content: center; /* Center the form horizontally */
+  align-items: flex-start; /* Align items at the top to reduce space above */
+  padding: 20px; /* Reduce the padding to minimize space above and below */
+  box-sizing: border-box;
+  gap: 20px;
+  min-height: auto;
 }
 
 .booking-form-section {
@@ -1265,8 +1120,8 @@ h1, h2 {
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
+  max-width: 600px; /* Keeps the form box width the same */
+  margin: 0 auto; /* Centers the box */
 }
 
 .booking-form-section h2 {
@@ -1288,20 +1143,54 @@ h1, h2 {
   margin-bottom: 5px;
 }
 
+/* Input and Textarea Adjustments */
 .booking-form-section input,
 .booking-form-section textarea {
   width: 100%;
+  max-width: 450px; /* Make the input boxes smaller */
   padding: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   border: 1px solid #c2a47d; /* Light brown border */
   border-radius: 4px;
   background-color: #fff;
   font-size: 1rem;
+  display: block;
+  justify-content: center;
 }
 
+/* Textarea should still have resizing */
 .booking-form-section textarea {
   resize: vertical;
 }
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  .booking-form-section {
+    padding: 15px;  /* Adjust padding to fit better on mobile */
+  }
+
+  .booking-form-section form {
+    width: 100%;         /* Ensure form takes up most of the screen */
+    max-width: none;     /* Remove max-width to allow flexibility */
+  }
+
+  .booking-form-section h2 {
+    font-size: 1.5rem;   /* Adjust header size for mobile */
+  }
+
+  .booking-form-section p {
+    font-size: 1rem;     /* Adjust paragraph font size */
+  }
+
+  .booking-form-section input,
+  .booking-form-section textarea,
+  .booking-form-section button {
+    width: 90%;         /* Form elements take full width on mobile */
+    font-size: 1rem;     /* Adjust font size for readability */
+    max-width: 100%;     /* Ensure full width for mobile screens */
+  }
+}
+
 
 .mailing-button {
   display: block;
@@ -1329,22 +1218,118 @@ h1, h2 {
   margin-top: 15px;
 }
 
-@media (max-width: 768px) {
-  .booking-form-section {
-    padding: 20px;
+
+
+/* General styles for event info */
+#event-info-box {
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Make event carousel horizontally scrollable */
+.event-carousel {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.event-card {
+  flex: none;
+  width: 80%; /* or a fixed width, e.g., 300px */
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  box-sizing: border-box;
+  scroll-snap-align: center;
+}
+
+/* Button styles for navigation arrows */
+.event-arrow {
+  font-size: 24px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.event-arrow:focus {
+  outline: none;
+}
+
+/* Arrows alignment */
+#event-arrows {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.mobile-view {
+  text-align: center; /* Center content for mobile */
+}
+
+.event-info-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Hide the calendar for mobile layouts */
+@media only screen and (max-width: 768px) {
+  /* Hide the calendar and its title */
+  #calendar-wrapper {
+    display: none;
   }
 
-  .booking-form-section h2 {
-    font-size: 1.5rem;
+  #calendar-title-wrapper {
+    display: none;
   }
 
-  .booking-form-section p {
-    font-size: 1rem;
+  /* Hide the upcoming events box on mobile */
+  .event-info-box {
+    display: block; /* Make sure the event info box is visible */
   }
 
-  .mailing-button {
+  /* Remove the upcoming event box from view */
+  .upcoming-event-box {
+    display: none;
+  }
+
+  /* Adjust event info box layout for mobile */
+  .event-info-box button {
     width: 100%;
-    font-size: 1rem;
+    margin: 5px 0;
+  }
+
+  /* Center content for mobile */
+  .jam-night-message, .band-booking-message {
+    text-align: center;
+  }
+}
+
+.nav-arrow {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 5px 10px;
+  color: #fff;
+}
+.nav-arrow:hover {
+  color: #ffd700; /* Highlight on hover */
+}
+
+
+@media (max-width: 768px) {
+  .music-banner {
+    display: none;
+  }
+
+  .footer-about {
+    display: none !important;
   }
 }
 

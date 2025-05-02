@@ -39,11 +39,22 @@ document.addEventListener("DOMContentLoaded", () => {
     if (event) {
       const isToday = event.date === getTodayString();
       const label = isToday ? "Tonight" : "Next";
-      banner.textContent = `🎶 ${label}: ${event.title} at ${event.time}`;
+  
+      if (isToday) {
+        banner.textContent = `🎶 ${label}: ${event.title} at ${event.time}`;
+      } else {
+        const [year, month, day] = event.date.split('-').map(Number);
+        const eventDate = new Date(year, month - 1, day); // Month is 0-based
+        const options = { weekday: 'long' };
+        const dayName = eventDate.toLocaleDateString(undefined, options);
+        banner.textContent = `🎶 ${label}: ${event.title} — ${dayName} at ${event.time}`;
+      }
     } else {
       banner.textContent = "🎶 No upcoming events";
     }
   }
+  
+  
   
        
         
@@ -61,23 +72,13 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    const slides = document.querySelectorAll(".carousel-slide");
-    let currentSlide = 0;
-    
-    function showNextSlide() {
-      slides[currentSlide].classList.remove("active");
-      currentSlide = (currentSlide + 1) % slides.length;
-      slides[currentSlide].classList.add("active");
-    }
-    
-    setInterval(showNextSlide, 4000); // change slide every 4 seconds
     
     function confirmAge(isOfAge) {
       if (isOfAge) {
         document.getElementById('age-gate').style.display = 'none';
         sessionStorage.setItem('isOfAge', 'true'); // Only for this browser session
       } else {
-        window.location.href = "https://www.responsibility.org/";
+        window.location.href = blank;
       }
     }
     
@@ -129,3 +130,59 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initialize the event info on page load
   updateEventInfo();
 });
+
+
+// Cache elements
+const eventInfoBox = document.querySelector('.event-info-box');
+const prevArrow = document.querySelector('.prev-event');
+const nextArrow = document.querySelector('.next-event');
+let currentEventIndex = 0;
+
+// Function to update the event details
+function updateEventInfo(eventIndex) {
+  const event = events[eventIndex];
+  eventInfoBox.innerHTML = `
+      <h3>${event.title}</h3>
+      <p><strong>Date:</strong> ${event.date}</p>
+      <p><strong>Time:</strong> ${event.time}</p>
+      <p><strong>Description:</strong> ${event.description}</p>
+  `;
+  eventInfoBox.setAttribute('data-event-index', eventIndex);
+  // Update the 'Next Event' card number
+  const eventNumber = eventIndex + 1; // Event # is 1-based
+  eventInfoBox.querySelector('.event-number').textContent = `#${eventNumber}`;
+}
+
+// Initialize the first event
+updateEventInfo(currentEventIndex);
+
+// Function to go to the next event
+function showNextEvent() {
+  currentEventIndex = (currentEventIndex + 1) % events.length;  // Loop back to first event
+  updateEventInfo(currentEventIndex);
+}
+
+// Function to go to the previous event
+function showPrevEvent() {
+  currentEventIndex = (currentEventIndex - 1 + events.length) % events.length;  // Loop to last event
+  updateEventInfo(currentEventIndex);
+}
+
+// Event listeners for arrow buttons
+nextArrow.addEventListener('click', showNextEvent);
+prevArrow.addEventListener('click', showPrevEvent);
+
+// Function to handle mobile-friendly view (centered elements and event box interaction)
+function handleMobileView() {
+  const mediaQuery = window.matchMedia("(max-width: 768px)");
+  if (mediaQuery.matches) {
+      // Center elements on mobile
+      document.body.classList.add('mobile-view');
+  } else {
+      document.body.classList.remove('mobile-view');
+  }
+}
+
+// Call the mobile view handler on window resize
+window.addEventListener('resize', handleMobileView);
+handleMobileView();

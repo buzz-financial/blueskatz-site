@@ -340,3 +340,30 @@ const observer = new IntersectionObserver(
 observer.observe(imageSection);
 
 
+// Mobile check and event panel display adjustments
+function handleMobileView() {
+  const mediaQuery = window.matchMedia("(max-width: 768px)");
+
+  // If on mobile, hide the calendar and event detail box
+  if (mediaQuery.matches) {
+      // Hide calendar
+      document.getElementById('calendar-wrapper').style.display = 'none';
+      
+      // Hide event detail box
+      document.getElementById('event-detail').style.display = 'none';
+      
+      // Adjust event info box for mobile layout
+      document.querySelector('.event-info-box').style.display = 'block';
+  } else {
+      // Show calendar on larger screens
+      document.getElementById('calendar-wrapper').style.display = 'block';
+      
+      // Show event detail box on larger screens
+      document.getElementById('event-detail').style.display = 'block';
+  }
+}
+
+// Call the function on page load and window resize
+window.addEventListener('load', handleMobileView);
+window.addEventListener('resize', handleMobileView);
+
