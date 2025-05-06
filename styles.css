@@ -1170,7 +1170,7 @@ h1, h2 {
 .booking-form-section input,
 .booking-form-section textarea {
   width: 100%;
-  max-width: 450px; /* Make the input boxes smaller */
+  max-width: 580px; /* Make the input boxes smaller */
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #c2a47d; /* Light brown border */
@@ -1179,6 +1179,7 @@ h1, h2 {
   font-size: 1rem;
   display: block;
   justify-content: center;
+  margin: 0 auto 10px;
 }
 
 .booking-form-section textarea {
