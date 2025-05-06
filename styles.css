@@ -45,7 +45,7 @@ header nav ul li {
 }
 
 header nav ul li a {
-  color: #d2b48c;
+  color: #fff;
   text-decoration: none;
   padding: 8px 16px;
   border-radius: 4px;
@@ -529,7 +529,7 @@ td.no-date {
 
 .hours-box-link {
   text-decoration: none;
-  color: #d2b48c;
+  color: #ffffff;
   display: flex;
   justify-content: center;
 }
@@ -1327,3 +1327,18 @@ h1, h2 {
 #grill-menu, #bar-menu {
   scroll-margin-top: 100px; /
 }
+
+.tooltip {
+  position: fixed;
+  background-color: #222;
+  color: #fff;
+  padding: 6px 10px;
+  font-size: 0.85rem;
+  border-radius: 5px;
+  pointer-events: none;
+  z-index: 9999;
+  white-space: nowrap;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.2s ease;
+}
+

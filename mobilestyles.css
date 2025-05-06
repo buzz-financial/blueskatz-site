@@ -125,3 +125,112 @@
 .mobile-view {
 text-align: center; /* Center content for mobile */
 }
+
+/* Mobile layout adjustments (max-width 768px) */
+@media only screen and (max-width: 768px) {
+  /* Hide the features section on mobile */
+  .features-section {
+      display: none;
+  }
+
+  /* Hide the calendar and its title on mobile */
+  #calendar-wrapper {
+    display: none;
+  }
+
+  /* Show the upcoming events box on mobile */
+  .event-info-box {
+    display: block;
+  }
+
+  /* Hide the static upcoming-event-box if you're not using it */
+  .upcoming-event-box {
+    display: none;
+  }
+
+  /* Center content and adjust layout */
+  .jam-night-message,
+  .band-booking-message,
+  .event-detail {
+    text-align: center;
+  }
+
+  #calendar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  #right-column {
+    max-width: 90%;
+    margin-top: 1rem;
+  }
+
+  .calendar {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .jam-night-message,
+  .band-booking-message {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  #right-column {
+    max-width: 90%;
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .event-detail,
+  .jam-night-message,
+  .band-booking-message {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 1rem; /* Adds space between boxes */
+    box-sizing: border-box;
+  }
+
+  /* SHOW arrows on mobile */
+  #prev-event,
+  #next-event {
+    display: inline-block;
+    margin: 0 10px;
+  }
+
+  .music-banner {
+    display: none;
+  }
+
+  .footer-about {
+    display: none !important;
+  }
+
+  .event-info-box .event-date,
+  .event-info-box .event-time {
+      font-size: 1rem; /* Adjust the font size if necessary */
+      font-weight: normal; /* Maintain normal font weight if needed */
+      text-align: center; /* Center the text on mobile */
+  }
+
+  .event-info-box .event-date,
+  .event-info-box .event-time {
+      display: inline-block;
+      margin: 0.5rem 0; /* Add space between date and time */
+  }
+
+  /* Ensure the event info is correctly formatted */
+  .event-info-box .event-date {
+      text-transform: capitalize; /* Capitalize the first letter of each word */
+  }
+
+  .event-info-box .event-time {
+      font-style: italic; /* Make the time italic for styling */
+  }
+
+}

@@ -186,4 +186,37 @@ function handleMobileView() {
 window.addEventListener('resize', handleMobileView);
 handleMobileView();
 
+document.addEventListener("DOMContentLoaded", function () {
+  const tooltip = document.getElementById("tooltip");
 
+  const today = new Date();
+  today.setHours(0, 0, 0, 0); // Remove time portion
+
+  document.querySelectorAll("td").forEach((cell) => {
+    const isSaturday = cell.cellIndex === 6;
+    const dateStr = cell.getAttribute("data-date"); // You need this attribute on each cell
+    if (!isSaturday || !dateStr) return;
+
+    const cellDate = new Date(dateStr);
+    cellDate.setHours(0, 0, 0, 0);
+
+    const isFuture = cellDate >= today;
+    const isBooked = events.some(event => event.date === dateStr);
+
+    if (isFuture && !isBooked) {
+      cell.addEventListener("mouseenter", (e) => {
+        tooltip.textContent = "Click to book your band!";
+        tooltip.style.display = "block";
+      });
+
+      cell.addEventListener("mousemove", (e) => {
+        tooltip.style.left = e.pageX + 10 + "px";
+        tooltip.style.top = e.pageY + 10 + "px";
+      });
+
+      cell.addEventListener("mouseleave", () => {
+        tooltip.style.display = "none";
+      });
+    }
+  });
+});
