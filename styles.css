@@ -53,7 +53,7 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-  background-color: #e0ac6d;
+  background-color: #9c6834;
 }
 
 /* === MAIN CONTENT === */
@@ -160,6 +160,9 @@ main h2 {
   text-align: center; 
 }
 
+.footer-map h3 {
+  padding-bottom: 0.5rem;
+}
 
 
 .footer-about ul {
@@ -257,10 +260,6 @@ main h2 {
   background-color: #e0ac6d;
 }
 
-.footer-map {
-  margin-top: 2rem;
-  text-align: center;
-}
 
 .footer-columns h3 {
   margin: 0;
@@ -840,8 +839,6 @@ h1, h2 {
 }
 
 #right-column {
-  max-width: 350px;
-  min-width: 300px;
   grid-column: 2;
   padding-left: 1rem;
 }
@@ -1262,6 +1259,12 @@ h1, h2 {
   color: #ffd700; /* Highlight on hover */
 }
 
+@media (min-width: 768px) {
+  #right-column {
+    margin-right: 5rem; /* or use margin-right if more appropriate for your layout */
+  }
+}
+
 
 
 /* Menu */
@@ -1287,9 +1290,13 @@ h1, h2 {
 }
 
 .menu-list li {
-  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
   border-bottom: 1px dotted #555;
-  padding-bottom: 1rem;
+  padding: 1rem 0;
+  margin-bottom: 0.5rem;
 }
 
 .menu-list h3 {
@@ -1297,16 +1304,26 @@ h1, h2 {
   font-family: 'Inter', sans-serif;
   font-weight: 600;
   color: #fff;
+  flex: 1 1 70%;
 }
 
 .menu-list p {
   margin: 0.25rem 0;
   font-size: 0.95rem;
   color: #ccc;
+  flex: 1 1 70%;
 }
 
 .menu-list span {
-  float: right;
   color: #cc9933;
   font-weight: 600;
+  font-size: 1.05rem;
+  flex: 1 1 25%;
+  text-align: right;
+  align-self: center;
+}
+
+/*to make the auto scroll links still show the title*/
+#grill-menu, #bar-menu {
+  scroll-margin-top: 100px; /
 }
