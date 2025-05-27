@@ -308,3 +308,19 @@ text-align: center; /* Center content for mobile */
     height: auto;
   }
 }
+
+
+@media (max-width: 768px) {
+  .logo {
+    height: 70px;
+  }
+
+  .logo-container {
+    padding: 0.5rem 0;
+    text-align: center;
+  }
+
+  body {
+    overflow-x: hidden; /* prevents side-scroll from any overflow */
+  }
+}
