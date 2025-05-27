@@ -283,4 +283,28 @@ text-align: center; /* Center content for mobile */
     justify-content: center;
     gap: 20px;
   }
+
+    #home-link {
+    display: block;
+    margin: 0 auto;
+    max-width: 180px; /* Adjust size as needed */
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  img,
+  video,
+  iframe {
+    max-width: 100%;
+    height: auto;
+  }
 }
