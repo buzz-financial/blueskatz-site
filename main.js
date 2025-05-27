@@ -223,3 +223,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 document.getElementById('current-year').textContent = new Date().getFullYear();
+
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+

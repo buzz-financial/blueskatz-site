@@ -35,12 +35,13 @@
         </a>
       </h1>        
       <nav>
-            <ul>
+          <div class="hamburger" id="hamburger">&#9776;</div>
+            <ul class="nav-links" id="nav-links">
                 <li><a href="#calendar">Live Music</a></li>
                 <li><a href="menu.html" target="_blank">Menu</a></li>
                 <li><a href="#more-events">About</a></li>
             </ul>
-        </nav>
+      </nav>
     </header>
 
     <div class="age-banner">
@@ -238,6 +239,18 @@
 </div>
 
 <div id="tooltip" class="tooltip" style="display: none;"></div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("nav-links");
+
+    hamburger.addEventListener("click", function () {
+      navLinks.classList.toggle("show");
+    });
+  });
+</script>
+
 
 </body>
 </html>
