@@ -12,6 +12,12 @@ html {
   scroll-behavior: smooth;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+
 /* === HEADER === */
 
 header {
@@ -24,6 +30,10 @@ header {
   padding: 1rem 0;
   text-align: center;
   font-weight: bold;
+  min-height: 200px; /* or however tall you want it */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 
@@ -32,7 +42,7 @@ header h1 {
 }
 
 header nav {
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 header nav ul {
@@ -618,24 +628,31 @@ td.no-date {
 }
 
 .logo-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;  /* centers child horizontally */
-  align-items: center;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100%;          /* full width container */
+  overflow: visible;    /* allow children to grow */
+}
+
+#home-link {
+  display: inline-block;   /* keeps it shrink-wrapped */
+  width: auto !important;  /* override any width */
+  max-width: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 
 .logo {
-  height: 150px;      /* increase from 100px to 150px for bigger logo */
-  width: auto;        /* keep aspect ratio */
-  vertical-align: middle;
+  display: block;
+  height: 150px;
+  width: auto;
+  max-width: none !important;
 }
 
-#home-link {
-  display: inline-block;
-  padding: 0;
-  margin: 0;
-}
 
 
 .highlight-block {
@@ -1359,19 +1376,3 @@ h1, h2 {
   transition: opacity 0.2s ease;
 }
 
-header, body {
-  margin: 0;
-  padding: 0;
-}
-
-.logo-container {
-  outline: 1px solid red;
-}
-
-#home-link {
-  outline: 1px solid blue;
-}
-
-.logo {
-  outline: 1px solid green;
-}
