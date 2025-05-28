@@ -1,4 +1,15 @@
+#features,
+.features-section {
+  display: none;
+}
 
+/* Show features only on screens wider than 1200px */
+@media screen and (min-width: 1200px) {
+  #features,
+  .features-section {
+    display: block;
+  }
+}
 /* Mobile-specific adjustments */
 @media (max-width: 768px) {
     .booking-form-section {
@@ -322,5 +333,173 @@ text-align: center; /* Center content for mobile */
 
   body {
     overflow-x: hidden; /* prevents side-scroll from any overflow */
+  }
+}
+
+
+/* Tablet-specific adjustments (e.g. iPad portrait and landscape) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  
+ #calendar-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #calendar-wrapper table {
+    width: 100%;
+    max-width: 600px;
+    table-layout: auto; /* allow flexible column widths */
+  }
+  #calendar-wrapper table th {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.3rem;
+    white-space: nowrap;
+  }
+  #calendar-wrapper,
+  #right-column {
+    width: 90%;
+    max-width: 700px;
+    margin: 0 auto 1rem;
+  }
+
+  #right-column > div {
+    margin-bottom: 1rem;
+  }
+
+
+  #calendar-wrapper table th,
+  #calendar-wrapper table td {
+    padding: 0.25rem 0.4rem;
+    font-size: 0.9rem;
+  }
+
+  /* Adjust jam night, band booking messages for tablet */
+  .jam-night-message,
+  .band-booking-message,
+  .event-detail {
+    width: 90%;
+    max-width: 600px;
+    margin: 0.5rem auto 1rem;
+    text-align: center;
+  }
+
+  /* Show arrows for scrolling events */
+  #prev-event,
+  #next-event {
+    display: inline-block;
+    margin: 0 15px;
+    font-size: 1.5rem; /* Bigger touch target */
+  }
+
+  /* Adjust header nav font size */
+  header nav ul li a {
+    font-size: 1.1rem;
+    padding: 10px 20px;
+  }
+
+  /* Adjust logo size on tablets */
+  .logo {
+    height: 120px;
+    max-width: none;
+  }
+
+  /* Increase padding on booking form */
+  .booking-form-section {
+    padding: 25px 20px;
+  }
+
+  .booking-form-section form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .booking-form-section input,
+  .booking-form-section textarea,
+  .booking-form-section button {
+    width: 95%;
+    font-size: 1.1rem;
+  }
+  
+  /* Make hamburger hidden and nav visible on tablets */
+  .hamburger {
+    display: none;
+  }
+  
+  .nav-links {
+    display: flex !important;
+    justify-content: center;
+    gap: 15px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  /* The container holding the info boxes */
+  #right-column {
+    max-width: 500px;          /* limit max width so it doesn’t stretch too wide */
+    width: 90%;                /* take most of the screen width */
+    margin: 0 auto;            /* center horizontally */
+    padding-left: 1rem;        /* horizontal padding so content doesn't touch edges */
+    padding-right: 1rem;
+    box-sizing: border-box;    /* include padding in width calculation */
+  }
+
+  /* Individual info boxes */
+  .event-detail,
+  .jam-night-message,
+  .band-booking-message {
+    max-width: 500px;          /* keep boxes uniform width */
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  #calendar-container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    gap: 1rem;
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+
+  #calendar-wrapper,
+  #right-column {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  #right-column {
+    padding: 0.5rem;
+    font-size: 0.85rem;
+    box-sizing: border-box;
+  }
+
+  .event-detail,
+  .jam-night-message,
+  .band-booking-message {
+    padding: 0.6rem;
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+
+  .event-detail h3,
+  .jam-night-message h3,
+  .band-booking-message h3 {
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .nav-arrow {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  #add-to-google-calendar,
+  .booking-button {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.6rem;
   }
 }
