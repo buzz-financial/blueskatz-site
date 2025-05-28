@@ -1,1 +1,1 @@
-Site for Blues Katz bar in St. George, Utah. Waiting to hear from owner if he wants implementation for the Google Calendar feature or the mailing list. 
+Site for Blues Katz bar in St. George, Utah. Site has been approved by owner, waiting to implement new information. Menu, Google Calendar to allow him to make direct changes, and switching over mailing list.
