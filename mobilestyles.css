@@ -306,21 +306,34 @@ text-align: center; /* Center content for mobile */
   }
 
   .day-column {
-    margin-bottom: 1.5rem;
-    padding: 1rem;
+    margin-bottom: 1rem;     /* Less space between day boxes */
+    padding: 0.4rem;         /* Less inner padding */
     border: 1px solid #444;
-    border-radius: 8px;
+    border-radius: 6px;      /* Slightly tighter corner */
     background-color: #1a1a1a;
   }
 
   .day-name {
     font-weight: bold;
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+    font-size: 1rem;         /* Slightly smaller title */
+    margin-bottom: 0.3rem;   /* Tighter spacing */
     color: #fff;
   }
 
   .day-box {
+    font-size: 0.95rem;      /* Optional: scale down text if needed */
     color: #ddd;
   }
 }
+
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .day-name {
+    font-size: 0.9rem;
+  }
+
+  .day-box {
+    font-size: 0.8rem;
+  }
+}
+
