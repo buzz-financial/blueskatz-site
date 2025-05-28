@@ -176,6 +176,10 @@ main h2 {
   padding-bottom: 0.5rem;
 }
 
+.footer-about li {
+  line-height: 1.6;
+}
+
 
 .footer-about ul {
   list-style: none;

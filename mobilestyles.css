@@ -31,43 +31,7 @@
   color: #bbb;
 }
 
-/* Mobile styles */
-@media (max-width: 768px) {
 
-  /* Horizontal scroll for days header */
-  #week-days-container {
-    overflow-x: auto;
-    white-space: nowrap;
-    padding-bottom: 8px;
-  }
-  #week-days-container > div {
-    display: inline-block;
-    min-width: 100px;
-    text-align: center;
-  }
-
-  /* Horizontal scroll for event boxes */
-  #week-grid {
-    overflow-x: auto;
-    gap: 12px;
-    padding-bottom: 10px;
-  }
-  #week-grid > div {
-    min-width: 150px;
-    flex-shrink: 0;
-  }
-
-  /* Optional: styled scrollbars */
-  #week-days-container::-webkit-scrollbar,
-  #week-grid::-webkit-scrollbar {
-    height: 6px;
-  }
-  #week-days-container::-webkit-scrollbar-thumb,
-  #week-grid::-webkit-scrollbar-thumb {
-    background: #ccc;
-    border-radius: 3px;
-  }
-}
 
 /* Your existing mobile styles below remain unchanged and apply as usual */
 
@@ -328,3 +292,35 @@ text-align: center; /* Center content for mobile */
 
 
 
+/* Desktop styles (unchanged) */
+#week-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* Mobile styles: Stack each day column vertically */
+@media (max-width: 768px) {
+  #week-container {
+    display: block;
+  }
+
+  .day-column {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border: 1px solid #444;
+    border-radius: 8px;
+    background-color: #1a1a1a;
+  }
+
+  .day-name {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+  }
+
+  .day-box {
+    color: #ddd;
+  }
+}
