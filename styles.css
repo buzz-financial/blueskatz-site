@@ -197,9 +197,11 @@ main h2 {
 }
 
 .footer-copy {
-  margin-top: 2rem;
-  text-align: center;
-  font-size: 0.9rem;
+  width: 100%;       /* Ensure it takes full width */
+  clear: both;       /* Clear floats if any */
+  text-align: center; /* Optional: center the footer text */
+  margin-top: 1rem;  /* spacing above */
+  display: block;    /* ensure block display */
   color: #fdf6e3;
 }
 
@@ -289,169 +291,6 @@ main h2 {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-/* === CALENDAR === */
-
-#calendar-wrapper {
-  flex: 2;
-  max-width: 100%;
-  width: 100%;
-}
-
-.calendar {
-  width: 100%;
-  max-width: 1300px; /* bigger max width */
-  margin: 0 auto;
-  padding: 1rem;
-}
-.calendar-day {
-  height: 130px;
-  width: 130px;
-  background-color: #1c1c1c;
-  border: 1px solid #555;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 0.5rem;
-  position: relative;
-  box-sizing: border-box;
-}
-.calendar-grid {
-  display: grid;
-  grid-template-columns: repeat(7, 120px); /* 7 days */
-  grid-auto-rows: 100px;
-  gap: 2px;
-}
-
-
-
-
-/* Prevent event text from stretching the box */
-.calendar-day .event {
-  font-size: 0.8rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-/* Add scroll or wrap if multiple events (optional) */
-.calendar-day .event-multi {
-  overflow-y: auto;
-  max-height: 60px;
-}
-
-/* Highlighted dot for selected day */
-.calendar-day.selected::after {
-  content: '';
-  width: 8px;
-  height: 8px;
-  background: #b2b2b2;
-  border-radius: 50%;
-  position: absolute;
-  bottom: 5px;
-  right: 5px;
-}
-
-
-#calendar th,
-#calendar-body th {
-  width: 14.28%;
-  padding: 10px;
-  background-color: #4a3325;
-  border-bottom: 2px solid #704d33;
-  font-weight: bold;
-}
-
-#calendar td,
-#calendar-body td {
-  width: 14.28%;
-  height: 100px;
-  padding: 20px;
-  text-align: center;
-  vertical-align: middle;
-  border: 1px solid #704d33;
-  background-color: #1c1c1c;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-  position: relative;
-}
-
-#calendar td:hover {
-  background-color: #e0ac6d;
-}
-
-td.no-date {
-  background: transparent;
-  pointer-events: none;
-}
-
-#calendar td.today {
-  background-color: #2e2e2e;
-  border: 2px solid #f5c16c;
-  font-weight: bold;
-  color: #ffffff;
-}
-
-#calendar td.selected-date {
-  background-color: #4a3325;
-  border: 2px solid #f5c16c;
-  color: #ffffff;
-  font-weight: bold;
-}
-
-#calendar-body td::before {
-  content: attr(data-date);
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  font-size: 14px;
-  font-weight: bold;
-  color: #ffffff;
-}
-
-.calendar-table th,
-.calendar-table td {
-  border: 1px solid #704d33;
-  padding: 20px; /* increase this for height */
-  text-align: center;
-  vertical-align: top;
-  height: 100px;  /* increase this for taller squares */
-  width: 100px;  /* 100% / 7 days, keeps it uniform */
-  box-sizing: border-box;
-  word-wrap: break-word;
-}
-
-.calendar-table th {
-  font-weight: bold;
-  font-size: 1rem;
-  background-color: #222;
-  color: white;
-}
-
-#calendar-title-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  margin-bottom: 10px;
-  color: #e0e0e0;
-}
-
-.calendar-nav {
-  background-color: #4a3325;
-  color: #ffffff;
-  border: 1px solid #704d33;
-  padding: 8px 12px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 18px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-.calendar-nav:hover {
-  background-color: #e0ac6d;
-}
 
 .event-preview {
   font-size: 0.7rem;
@@ -463,50 +302,6 @@ td.no-date {
   color: #d2b48c;
 }
 
-
-/* Keep header nice */
-#calendar th {
-  padding: 10px;
-  text-align: center;
-  background-color: #593c28; /* or whatever your header color is */
-  color: #fff;
-  font-weight: 600;
-  border: 2px solid #222;
-  vertical-align: middle;
-}
-
-/* Style the date cells */
-#calendar td {
-  width: 200px;
-  height: 100px;
-  padding: 20px; /* Bigger clickable area */
-  font-size: 1.2rem; /* Bigger numbers */
-  text-align: center;
-  border: 1px solid #704d33;
-  position: relative;
-  cursor: pointer;
-  box-sizing: border-box;
-}
-
-
-/* Make sure event titles inside cells don't overflow weirdly */
-#calendar td div {
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  margin-top: 20%;
-
-}
-
-#calendar-wrapper {
-  max-width: 1200px; /* increase from earlier ~700px */
-  margin: 0 auto;
-}
-
-#calendar table {
-  width: 100%;
-  font-size: 1.1rem;
-  margin: 0 auto;
-}
 
 
 /* === EVENT PANEL === */
@@ -1377,3 +1172,93 @@ h1, h2 {
   transition: opacity 0.2s ease;
 }
 
+#add-to-google-calendar {
+  display: inline-block; /* keep it inline but block-level so padding works */
+  white-space: nowrap;   /* prevent wrapping inside the button */
+  padding: 8px 16px;     /* comfortable padding */
+  font-size: 16px;       /* readable size */
+  background-color: #8b5e3c; /* Google blue */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none; /* if it's a link */
+  box-sizing: border-box;
+  max-width: none;       /* prevent max-width restrictions */
+}
+
+
+#week-view {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  max-width: 700px;
+  margin: 20px auto;
+}
+
+.day-box {
+  flex: 1;
+  min-width: 80px;
+  background-color: #1c1c1c;
+  color: #eee;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 15px 0;
+  cursor: pointer;
+  text-align: center;
+  font-weight: 600;
+  user-select: none;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.day-box:hover {
+  background-color: #333;
+}
+
+.day-box.selected {
+  border-color: #f5c16c;
+  background-color: #4a3325;
+}
+
+.day-box.today {
+  box-shadow: 0 0 8px 2px #f5c16c;
+}
+
+#event-info {
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 15px;
+  background-color: #2e2e2e;
+  color: #f5c16c;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  min-height: 60px;
+  text-align: center;
+}
+
+#week-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 20px auto;
+  gap: 20px; /* More space between boxes */
+}
+
+.day-column {
+  flex: 1;
+  text-align: center;
+}
+
+.day-name {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: #bbb; /* lighter gray */
+}
+
+.day-box {
+  height: 120px;
+  border: 2px solid #555; /* lighter border */
+  background-color: #2a2a2a; /* lighter background */
+  border-radius: 4px; /* less rounded */
+}
