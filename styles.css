@@ -1268,3 +1268,14 @@ h1, h2 {
   background-color: #2a2a2a; /* lighter background */
   border-radius: 4px; /* less rounded */
 }
+
+.calendar-block iframe {
+  border: 3px solid #4a3325;  /* Set border thickness and your color */
+  border-radius: 8px;          /* Optional: round corners */
+  box-shadow: 0 4px 10px rgba(74, 51, 37, 0.5); /* Optional: subtle shadow using same color */
+  background: #4a3325;           /* Optional: white background behind calendar */
+  display: block;
+  margin: 0 auto;
+  width: 1200px;
+  height: 600px;
+}
