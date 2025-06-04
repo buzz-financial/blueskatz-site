@@ -53,11 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
       banner.textContent = "🎶 No upcoming events";
     }
   }
-  
-  
-  
-       
-        
+ 
     function submitEmail(event) {
       event.preventDefault(); // Prevents page reload
 
