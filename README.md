@@ -1,1 +1,1 @@
-Site for Blues Katz bar in St. George, Utah. Site has been approved by owner, waiting to implement new information. Menu, Google Calendar to allow him to make direct changes, and switching over mailing list.
+Site for Blues Katz bar in St. George, Utah. Build using almost entirely HTML, CSS, and JS script.
