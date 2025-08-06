@@ -131,23 +131,10 @@
       margin-bottom: 1rem !important;
     }
 
-    /* Mailing list container mobile optimization */
-    .mailing-list-container {
-      width: 100% !important;
-      max-width: 320px !important;
-      margin: 0 auto !important;
-      padding: 1rem !important;
-      text-align: center !important;
-      min-height: 200px !important;
-      overflow: visible !important;
-    }
-
     /* Email Octopus form comprehensive mobile styling */
     .footer-columns script + div,
     .footer-columns form,
-    .footer-columns [data-form],
-    .mailing-list-container form,
-    .mailing-list-container [data-form] {
+    .footer-columns [data-form] {
       max-width: 100% !important;
       width: 100% !important;
       margin: 0 auto !important;
@@ -190,8 +177,6 @@
     div[data-form] > * > *,
     .footer-columns [data-form],
     .footer-columns [data-form] *,
-    .mailing-list-container [data-form],
-    .mailing-list-container [data-form] *,
     [data-form],
     [data-form] > *,
     [data-form] form,
@@ -206,7 +191,6 @@
     }
 
     /* Override inline background styles on mobile */
-    .mailing-list-container [style*="background"],
     .footer-mailing [style*="background"],
     div[data-form] [style*="background"],
     [style*="background-color: #"] {
@@ -218,11 +202,7 @@
     .footer-columns input,
     .footer-columns button,
     .footer-columns select,
-    .footer-columns textarea,
-    .mailing-list-container input,
-    .mailing-list-container button,
-    .mailing-list-container select,
-    .mailing-list-container textarea {
+    .footer-columns textarea {
       width: 100% !important;
       max-width: 280px !important;
       margin: 0.5rem auto !important;
@@ -235,7 +215,9 @@
     }
 
     /* Footer headings */
-    .footer-columns h3 {
+    .footer-about h3,
+    .footer-map h3 {
+      color: white !important;
       font-size: 1.2rem !important;
       margin-bottom: 1rem !important;
       text-align: center !important;
