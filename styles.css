@@ -162,6 +162,69 @@ main h2 {
   font-family: inherit;
 }
 
+/* Mailing list container styles */
+.mailing-list-container {
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Style the Email Octopus form when it loads */
+.mailing-list-container form,
+.mailing-list-container div[data-form] {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.mailing-list-container input[type="email"],
+.mailing-list-container input[type="text"],
+.mailing-list-container button {
+  width: 100%;
+  max-width: 250px;
+  margin: 0.25rem 0;
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.mailing-list-container button {
+  background-color: #593c28;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.mailing-list-container button:hover {
+  background-color: #e0ac6d;
+}
+
+/* Email Octopus form inline styling */
+div[data-form] {
+  position: static !important;
+  transform: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+}
+
+/* Ensure Email Octopus form displays inline, not as popup */
+[data-form] form,
+.eo-form {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  position: static !important;
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
 
 .footer-map {
   flex: 2; /* make this one bigger */
