@@ -936,6 +936,7 @@ h1, h2 {
   .arrow {
     display: block;
   }
+
 }
 
 .arrow {
@@ -1274,6 +1275,13 @@ h1, h2 {
   background: #4a3325;           /* Optional: white background behind calendar */
   display: block;
   margin: 0 auto;
-  width: 1200px;
-  height: 600px;
+  max-width: 100%;
+  width: 50%;
+  height: 400px;
+}
+
+@media (max-width: 768px) {
+  .calendar-block iframe {
+    width: 80%;
+  }
 }
