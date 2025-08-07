@@ -113,6 +113,12 @@
       align-items: center !important;
     }
 
+    /* Make footer a flex container on mobile */
+    #about {
+      display: flex !important;
+      flex-direction: column !important;
+    }
+
     .footer-columns > div {
       flex: none !important;
       min-width: auto !important;
@@ -122,96 +128,19 @@
     }
 
     .footer-map {
-      order: 1; /* Show map first on mobile */
+      order: 2; /* Show map second on mobile */
       margin-bottom: 2rem !important;
     }
 
     .footer-mailing {
-      order: 2; /* Show mailing list second on mobile */
+      order: 1; /* Show mailing list first on mobile */
       margin-bottom: 1rem !important;
     }
 
-    /* Email Octopus form comprehensive mobile styling */
-    .footer-columns script + div,
-    .footer-columns form,
-    .footer-columns [data-form] {
-      max-width: 100% !important;
-      width: 100% !important;
-      margin: 0 auto !important;
-      position: static !important;
-      transform: none !important;
-      background: transparent !important;
-      box-shadow: none !important;
-      border: none !important;
-      padding: 0 !important;
-    }
-
-    /* Override Email Octopus modal/popup styling */
-    div[data-form] {
-      position: static !important;
-      top: auto !important;
-      left: auto !important;
-      right: auto !important;
-      bottom: auto !important;
-      transform: none !important;
-      z-index: auto !important;
-      background: transparent !important;
-      background-color: transparent !important;
-      background-image: none !important;
-      box-shadow: none !important;
-      border-radius: 0 !important;
-      max-height: none !important;
-      overflow: visible !important;
-      border: none !important;
-    }
-
-    /* Remove all backgrounds from Email Octopus elements on mobile */
-    .eo-form,
-    .eo-form div,
-    .eo-form form,
-    div[data-form],
-    div[data-form] > div,
-    div[data-form] form,
-    div[data-form] *,
-    div[data-form] > *,
-    div[data-form] > * > *,
-    .footer-columns [data-form],
-    .footer-columns [data-form] *,
-    [data-form],
-    [data-form] > *,
-    [data-form] form,
-    [data-form] .eo-form-wrapper,
-    [data-form] .eo-form-container,
-    [data-form] .eo-form-content {
-      background: transparent !important;
-      background-color: transparent !important;
-      background-image: none !important;
-      box-shadow: none !important;
-      border: none !important;
-    }
-
-    /* Override inline background styles on mobile */
-    .footer-mailing [style*="background"],
-    div[data-form] [style*="background"],
-    [style*="background-color: #"] {
-      background: transparent !important;
-      background-color: transparent !important;
-    }
-
-    /* Style all Email Octopus form elements consistently for mobile */
-    .footer-columns input,
-    .footer-columns button,
-    .footer-columns select,
-    .footer-columns textarea {
-      width: 100% !important;
-      max-width: 280px !important;
-      margin: 0.5rem auto !important;
-      display: block !important;
-      font-size: 0.95rem !important;
-      padding: 0.75rem !important;
-      border-radius: 6px !important;
-      box-sizing: border-box !important;
-      position: static !important;
+    /* Ensure copyright appears last on mobile */
+    .footer-copy {
+      order: 3 !important;
+      margin-top: 2rem !important;
     }
 
     /* Footer headings */
